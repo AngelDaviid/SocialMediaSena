@@ -1,4 +1,4 @@
-import { IsString, IsUUID, IsNotEmpty, IsDate } from 'class-validator';
+import { IsString, IsUUID, IsNotEmpty } from 'class-validator';
 
 export class InscripcionEventoDto {
   @IsUUID()
@@ -9,9 +9,6 @@ export class InscripcionEventoDto {
   @IsUUID()
   @IsString()
   @IsNotEmpty()
-  eventoId: string;
+  eventoId: string; //Tipo IEvente (modulo evento)
 
-  @IsDate()
-  @IsNotEmpty()
-  fechaInscripcion: Date;
 }

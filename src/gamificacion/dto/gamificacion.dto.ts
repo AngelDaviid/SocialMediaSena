@@ -1,4 +1,4 @@
-import { IsUUID, IsNotEmpty, IsDate, IsEnum } from 'class-validator';
+import { IsUUID, IsNotEmpty,  IsEnum } from 'class-validator';
 
 export enum TipoLogro {
   PARTICIPACION = 'participación',
@@ -16,7 +16,4 @@ export class GamificacionDto {
   @IsNotEmpty()
   tipoLogro: TipoLogro;
 
-  @IsDate()
-  @IsNotEmpty()
-  fechaObtencion: Date;
 }

@@ -1,5 +1,4 @@
 import { IsNotEmpty, IsString, IsEnum } from 'class-validator';
-
 export enum TipoNotificacion {
   NUEVA_PUBLICACION = 'nueva publicación',
   EMPLEO = 'empleo',
@@ -7,15 +6,13 @@ export enum TipoNotificacion {
   OTROS = 'otros',
 }
 
-export class CrearNotificacionDto {
-  @IsNotEmpty()
-  id: string;
+export class ActualizarNotificacionDto {
 
   @IsString()
   @IsNotEmpty()
-  mensaje: string;
+  mensaje?: string;
 
   @IsEnum(TipoNotificacion)
   @IsNotEmpty()
-  tipo: TipoNotificacion;
+  tipo?: TipoNotificacion;
 }
