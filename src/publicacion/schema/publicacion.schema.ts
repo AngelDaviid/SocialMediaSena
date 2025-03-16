@@ -21,20 +21,15 @@ export class Publicacion{
     })
     categoria: string;
 
-    /*@Prop({
+    @Prop({
         required: true
     })
-    fechaCreacion: Date;*/
+    numeroReacciones: number; //Tipo IReaccion (Modulo de reaccion)
 
     @Prop({
         required: true
     })
-    numeroReacciones: number;
-
-    @Prop({
-        required: true
-    })
-    numeroComentarios: number;
+    numeroComentarios: number; //Tipo IComentario (Modulo de comentario)
 }
 
 export const PublicacionSchema = SchemaFactory.createForClass(Publicacion)

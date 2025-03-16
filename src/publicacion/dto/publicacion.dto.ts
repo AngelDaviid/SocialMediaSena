@@ -8,7 +8,6 @@ export enum CategoriaPublicacion {
 }
 
 export class CrearPublicacionDto {
-  @IsUUID()
   @IsString()
   @IsNotEmpty()
   id: string;
