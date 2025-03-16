@@ -1,4 +1,4 @@
-import { Injectable } from '@nestjs/common';
+import { ConflictException, Injectable, InternalServerErrorException } from '@nestjs/common';
 import { User } from './schema/user.schema';
 import { Model } from 'mongoose';
 import { CrearUsuarioDto } from './dto/users.dto';
@@ -21,11 +21,12 @@ export class UsersService {
             return await user.save();
         }catch (error){
             if (error.code === 11000){
-                return {error: 'Usuario ya existe'};
+                throw new ConflictException('El usuario ya existe');
             }
-            return {error: 'Error en el servidor'};
+            throw new InternalServerErrorException('Error en el servidor');
         }
     }
+
 
     async findOneById(id: string){
         return await this.userModel.findById(id).exec();

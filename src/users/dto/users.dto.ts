@@ -14,7 +14,7 @@ export class CrearUsuarioDto {
 
   @IsEmail()
   @IsNotEmpty()
-  correoElectronico: string;
+  Email: string;
 
   @IsString()
   @IsNotEmpty()

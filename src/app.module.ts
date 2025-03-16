@@ -17,7 +17,7 @@ import { MongooseModule } from '@nestjs/mongoose';
 import { AuthModule } from './auth/auth.module';
 
 @Module({
-  imports: [MongooseModule.forRoot('mongodb://localhost/user'),UsersModule, PublicacionModule, ComentarioModule, ReaccionModule, ChatModule, EmpleoModule, PostulacionModule, EventoModule, InscripcionEventoModule, CertificadoModule, NotificacionModule, GamificacionModule, AuthModule],
+  imports: [MongooseModule.forRoot('mongodb+srv://angelreds2025:Clave2025*@cluster0.tttut.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0'),UsersModule, PublicacionModule, ComentarioModule, ReaccionModule, ChatModule, EmpleoModule, PostulacionModule, EventoModule, InscripcionEventoModule, CertificadoModule, NotificacionModule, GamificacionModule, AuthModule],
   controllers: [AppController],
   providers: [AppService],
 })

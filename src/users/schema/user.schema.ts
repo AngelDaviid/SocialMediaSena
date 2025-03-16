@@ -17,41 +17,35 @@ export class User{
         required: true,
         unique: true,
     })
-    correoElectronico:string;
+    Email:string;
 
     @Prop({
         required: true,
-        unique: true,
     })
     password:string;
 
     @Prop({
         required: true,
-        unique: true,
     })
     rol:string;
 
     @Prop({
         required: true,
-        unique: true,
     })
     fotoPerfil:string;
 
     @Prop({
         required: true,
-        unique: true,
     })
     biografia:string;   
 
     @Prop({
         required: true,
-        unique: true,
     })
     habilidadesCursos:string[];
 
     @Prop({
         required: true,
-        unique: true,
     })
     experienciaLaboral:string[];    
 }

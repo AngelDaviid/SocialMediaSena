@@ -2,6 +2,7 @@ import { Body, Controller, Delete, Get, HttpCode, NotFoundException, Param, Post
 import { UsersService } from './users.service';
 import { CrearUsuarioDto } from './dto/users.dto';
 import { ActualizarUserDto } from './dto/ActualizarUser.dto';
+import { notDeepEqual } from 'assert';
 
 @Controller('user')
 export class UsersController {
@@ -28,14 +29,8 @@ export class UsersController {
 
     @Post()
     async crear(@Body() body: CrearUsuarioDto){
-        try{
-            return await this.userService.crear(body);
-        }catch(error){
-            if (error.code === 11000){
-                return {error: 'Usuario ya existe'};
-            }
-            return {error: 'Error en el servidor'};
-        }
+        const user = await this.userService.crear(body);
+        return user ;
     }
 
     @Delete(':id')
