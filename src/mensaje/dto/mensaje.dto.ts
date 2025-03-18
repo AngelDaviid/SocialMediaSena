@@ -1,17 +1,17 @@
 import { IsUUID, IsString, IsNotEmpty, IsDate } from 'class-validator';
 
-export class MensajeDto {
-  @IsUUID()
+export class CrearMensajeDto {
+
   @IsString()
   @IsNotEmpty()
-  id: string;
+  idUser: string;
 
-  @IsUUID()
+
   @IsString()
   @IsNotEmpty()
   remitenteId: string;
 
-  @IsUUID()
+
   @IsString()
   @IsNotEmpty()
   destinatarioId: string;
@@ -20,7 +20,7 @@ export class MensajeDto {
   @IsNotEmpty()
   contenido: string;
 
-  @IsDate()
+  /*@IsDate()
   @IsNotEmpty()
-  fechaEnvio: Date;
+  fechaEnvio: Date;*/
 }

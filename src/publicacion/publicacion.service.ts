@@ -9,12 +9,12 @@ import { ActualizarPublicacionDto } from './dto/ActualizarPublicacion.dto';
 export class PublicacionService {
     constructor(@InjectModel('Publicacion') private userModel: Model<Publicacion>){}
 
-    findAll(){
-        return this.userModel.find().exec();
+    async findAll(){
+        return await this.userModel.find().exec();
     }
 
-    findOne(id: string){
-        return this.userModel.findById(id).exec();
+    async findOne(id: string){
+        return await this.userModel.findById(id).exec();
     }
 
     async crear(publicacionDto: CrearPublicacionDto){
