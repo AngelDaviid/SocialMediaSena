@@ -1,12 +1,11 @@
-import { IsUUID, IsString, IsNotEmpty, IsDate, IsEnum } from 'class-validator';
+import {  IsString, IsNotEmpty, IsEnum } from 'class-validator';
 
 export enum EstadoEmpleo {
   ACTIVO = 'activo',
   CERRADO = 'cerrado',
 }
 
-export class EmpleoDto {
-  @IsUUID()
+export class CrearEmpleoDto {
   @IsString()
   @IsNotEmpty()
   id: string;
@@ -30,10 +29,6 @@ export class EmpleoDto {
   @IsString()
   @IsNotEmpty()
   ubicacion: string;
-
-  @IsDate()
-  @IsNotEmpty()
-  fechaPublicacion: Date;
 
   @IsEnum(EstadoEmpleo)
   @IsNotEmpty()

@@ -17,7 +17,19 @@ import { AuthModule } from './auth/auth.module';
 import { MensajeModule } from './mensaje/mensaje.module';
 
 @Module({
-  imports: [MongooseModule.forRoot('mongodb+srv://angelreds2025:Clave2025*@cluster0.tttut.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0'),UsersModule, PublicacionModule, ComentarioModule, ReaccionModule, MensajeModule, EmpleoModule, PostulacionModule, EventoModule, InscripcionEventoModule, CertificadoModule, NotificacionModule, GamificacionModule, AuthModule],
+  imports: [MongooseModule.forRoot('mongodb+srv://angelreds2025:Clave2025*@cluster0.tttut.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0'),
+    UsersModule, 
+    PublicacionModule, 
+    ComentarioModule, 
+    ReaccionModule, 
+    EmpleoModule, 
+    PostulacionModule, 
+    EventoModule, 
+    InscripcionEventoModule, 
+    CertificadoModule, 
+    NotificacionModule, 
+    GamificacionModule, 
+    AuthModule],
   controllers: [AppController],
   providers: [AppService],
 })

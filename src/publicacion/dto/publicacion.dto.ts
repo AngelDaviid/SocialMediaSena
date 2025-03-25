@@ -1,4 +1,4 @@
-import { IsUUID, IsString, IsNotEmpty, IsDate, IsEnum, IsNumber } from 'class-validator';
+import { IsString, IsNotEmpty, IsEnum, IsNumber } from 'class-validator';
 
 export enum CategoriaPublicacion {
   PREGUNTAS = 'preguntas',

@@ -2,7 +2,6 @@ import { Body, Controller, Delete, Get, HttpCode, NotFoundException, Param, Post
 import { UsersService } from './users.service';
 import { CrearUsuarioDto } from './dto/users.dto';
 import { ActualizarUserDto } from './dto/ActualizarUser.dto';
-import { notDeepEqual } from 'assert';
 
 @Controller('user')
 export class UsersController {

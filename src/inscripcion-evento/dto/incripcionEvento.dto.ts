@@ -17,7 +17,7 @@ export class InscripcionEventoDto {
   
   @IsString()
   @IsNotEmpty()
-  eventoId: string;
+  eventoId: string; //Tipo IEvente (modulo evento)
 
   @IsEnum(EstadoInscripcion)
   @IsNotEmpty()

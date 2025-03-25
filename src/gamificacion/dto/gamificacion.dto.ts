@@ -1,3 +1,4 @@
+
 import { IsNotEmpty, IsEnum, IsString } from 'class-validator';
 
 export enum TipoLogro {
@@ -12,7 +13,7 @@ export class GamificacionDto {
   @IsEnum(TipoLogro)
   @IsNotEmpty()
   tipoLogro: TipoLogro;
-
+  
   @IsString()
   @IsNotEmpty()
   descripcion: string;
@@ -24,4 +25,5 @@ export class GamificacionDto {
   /*@IsDate()
   @IsNotEmpty()
   fechaObtencion: Date;*/
+
 }

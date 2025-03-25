@@ -1,4 +1,4 @@
-import { IsUUID, IsNotEmpty, IsDate, IsString, IsEnum } from 'class-validator';
+import { IsNotEmpty, IsString, IsEnum } from 'class-validator';
 
 export enum TipoNotificacion {
   NUEVA_PUBLICACION = 'nueva publicación',
@@ -7,8 +7,7 @@ export enum TipoNotificacion {
   OTROS = 'otros',
 }
 
-export class NotificacionDto {
-  @IsUUID()
+export class CrearNotificacionDto {
   @IsNotEmpty()
   id: string;
 
@@ -19,8 +18,4 @@ export class NotificacionDto {
   @IsEnum(TipoNotificacion)
   @IsNotEmpty()
   tipo: TipoNotificacion;
-
-  @IsDate()
-  @IsNotEmpty()
-  fecha: Date;
 }

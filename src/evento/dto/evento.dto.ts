@@ -1,17 +1,13 @@
-import { IsUUID, IsString, IsNotEmpty, IsDate, IsEnum, IsNumber } from 'class-validator';
+import { IsString, IsNotEmpty, IsEnum, IsNumber } from 'class-validator';
 
 export enum CategoriaEvento {
   CHARLA = 'charla',
-  HACKATON = 'hackatón',
+  HACKATON = 'hackaton',
   TALLER = 'taller',
   OTROS = 'otros',
 }
 
-export class EventoDto {
-  @IsUUID()
-  @IsString()
-  @IsNotEmpty()
-  id: string;
+export class CrearEventoDto {
 
   @IsString()
   @IsNotEmpty()
@@ -25,9 +21,9 @@ export class EventoDto {
   @IsNotEmpty()
   categoria: CategoriaEvento;
 
-  @IsDate()
+  @IsString()
   @IsNotEmpty()
-  fechaHora: Date;
+  fechaHora: string;
 
   @IsString()
   @IsNotEmpty()

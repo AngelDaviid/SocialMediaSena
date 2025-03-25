@@ -1,23 +1,17 @@
-import { IsUUID, IsString, IsNotEmpty, IsEnum } from 'class-validator';
+import { IsString, IsNotEmpty, IsEnum } from 'class-validator';
 
 export enum TipoReaccion {
   ME_GUSTA = 'Me gusta',
   INTERESANTE = 'Interesante',
-  UTIL = 'Útil',
+  UTIL = 'Util',
 }
 
 export class ReaccionDto {
-  @IsUUID()
   @IsString()
   @IsNotEmpty()
-  id: string;
-
-  @IsUUID()
-  @IsString()
-  @IsNotEmpty()
-  publicacionOComentarioId: string;
+  publicacionOComentarioId?: string; //IPublicacion (Modulo publicacion)
 
   @IsEnum(TipoReaccion)
   @IsNotEmpty()
-  tipoReaccion: TipoReaccion;
+  tipoReaccion?: TipoReaccion;
 }

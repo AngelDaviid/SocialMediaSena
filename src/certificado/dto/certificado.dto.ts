@@ -1,17 +1,12 @@
-import { IsUUID, IsNotEmpty, IsDate, IsString } from 'class-validator';
+import { IsNotEmpty, IsString } from 'class-validator';
 
-export class CertificadoDto {
-  @IsUUID()
+export class CrearCertificadoDto {
   @IsNotEmpty()
-  id: string;
+  eventoOCursoId: string; //IEvento (modulo evento)
 
-  @IsUUID()
+  @IsString()
   @IsNotEmpty()
-  eventoOCursoId: string;
-
-  @IsDate()
-  @IsNotEmpty()
-  fechaEmision: Date;
+  fechaEmision: string;
 
   @IsString()
   @IsNotEmpty()
