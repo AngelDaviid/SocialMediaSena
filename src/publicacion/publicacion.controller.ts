@@ -14,7 +14,7 @@ export class PublicacionController {
 
     @Get(':id')
     findOne(@Param('id') id: string){
-        return this.publicacionService.findOne(id);
+        return this.publicacionService.findOne(id); 
     }
 
     @Post() 

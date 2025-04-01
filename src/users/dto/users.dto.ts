@@ -8,33 +8,37 @@ export enum RolUsuario {
 }
 
 export class CrearUsuarioDto {
-  @IsString()
-  @IsNotEmpty()
-  nombre: string;
+    @IsString()
+    @IsNotEmpty()
+    username:string;
 
-  @IsEmail()
-  @IsNotEmpty()
-  Email: string;
+    @IsString()
+    @IsNotEmpty()
+    nombre: string;
 
-  @IsString()
-  @IsNotEmpty()
-  password: string;
+    @IsEmail()
+    @IsNotEmpty()
+    Email: string;
 
-  @IsEnum(RolUsuario)
-  @IsNotEmpty()
-  rol: RolUsuario;
+    @IsString()
+    @IsNotEmpty()
+    password: string;
 
-  @IsString()
-  fotoPerfil?: string;
+    @IsEnum(RolUsuario)
+    @IsNotEmpty()
+    rol: RolUsuario;
 
-  @IsString()
-  biografia?: string;
+    @IsString()
+    fotoPerfil?: string;
 
-  @IsArray()
-  @IsString({ each: true })
-  habilidadesCursos: string[];
+    @IsString()
+    biografia?: string;
 
-  @IsArray()
-  @IsString({ each: true })
-  experienciaLaboral: string[];
+    @IsArray()
+    @IsString({ each: true })
+    habilidadesCursos: string[];
+
+    @IsArray()
+    @IsString({ each: true })
+    experienciaLaboral: string[];
 }

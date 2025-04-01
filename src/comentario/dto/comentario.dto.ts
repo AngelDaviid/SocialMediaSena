@@ -1,12 +1,10 @@
-import { IsUUID, IsString, IsNotEmpty, IsDate } from 'class-validator';
+import { IsString, IsNotEmpty,  } from 'class-validator';
 
 export class ComentarioDto {
-  @IsUUID()
   @IsString()
   @IsNotEmpty()
   id: string;
 
-  @IsUUID()
   @IsString()
   @IsNotEmpty()
   publicacionId: string;
@@ -14,8 +12,4 @@ export class ComentarioDto {
   @IsString()
   @IsNotEmpty()
   contenido: string;
-
-  @IsDate()
-  @IsNotEmpty()
-  fechaCreacion: Date;
 }

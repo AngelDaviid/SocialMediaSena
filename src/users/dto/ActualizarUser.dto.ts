@@ -1,15 +1,16 @@
-import { IsEmail, IsNotEmpty, IsString, MaxLength, MinLength } from 'class-validator'
+import { IsEmail, IsString, MaxLength, MinLength } from 'class-validator'
 
 export class ActualizarUserDto{
+    @IsString()
+    username?:string
+
     @IsString()
     rol?:string;
 
     @IsString()
-    @IsNotEmpty()
     nombre?:string;
 
     @IsEmail()
-    @IsNotEmpty()
     correoElectronico?:string;
 
     @MinLength(4)

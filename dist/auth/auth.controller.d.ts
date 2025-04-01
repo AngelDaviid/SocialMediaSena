@@ -3,7 +3,7 @@ export declare class AuthController {
     private authService;
     constructor(authService: AuthService);
     login(body: {
-        nombre: string;
+        username: string;
         password: string;
     }): Promise<{
         access_token: string;

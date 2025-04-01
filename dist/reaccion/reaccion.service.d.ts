@@ -37,4 +37,9 @@ export declare class ReaccionService {
     } & {
         __v: number;
     }) | null>;
+    agregarReaccion(entidadId: string, tipoEntidad: 'publicacion' | 'comentario', tipoReaccion: string): Promise<import("mongoose").Document<unknown, {}, Reaccion> & Reaccion & {
+        _id: import("mongoose").Types.ObjectId;
+    } & {
+        __v: number;
+    }>;
 }

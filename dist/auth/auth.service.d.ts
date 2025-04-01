@@ -4,7 +4,7 @@ export declare class AuthService {
     private userService;
     private jwtService;
     constructor(userService: UsersService, jwtService: JwtService);
-    validarUser(nombre: string, password: string): Promise<{
+    validarUser(username: string, password: string): Promise<{
         _id: import("mongoose").Types.ObjectId;
         $locals: Record<string, unknown>;
         $op: "save" | "validate" | "remove" | null;
@@ -16,6 +16,7 @@ export declare class AuthService {
         id?: any;
         isNew: boolean;
         schema: import("mongoose").Schema;
+        username: string;
         nombre: string;
         Email: string;
         rol: string;

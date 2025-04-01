@@ -19,12 +19,14 @@ export class UsersController {
         return user;
     }
     
-    @Get('nombre/:nombre')
-    findOne(@Param('nombre') nombre: string){
-        const user = this.userService.findOne(nombre);
-        if(!user) throw new NotFoundException('Usuario no encontrado');
+
+    @Get('username/:username')
+    findOneUser(@Param('username') username:string){
+        const user = this.userService.findOneUser(username);
+        if(!user) throw new NotFoundException('Usuario no encontrado')
         return user;
     }
+
 
     @Post()
     async crear(@Body() body: CrearUsuarioDto){

@@ -5,6 +5,7 @@ export declare enum RolUsuario {
     EMPRESA = "Empresa"
 }
 export declare class CrearUsuarioDto {
+    username: string;
     nombre: string;
     Email: string;
     password: string;

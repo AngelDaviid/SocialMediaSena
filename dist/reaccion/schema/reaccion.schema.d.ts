@@ -1,8 +1,10 @@
+import { Schema as MongooseSchema } from "mongoose";
 export declare class Reaccion {
-    publicacionOComentarioId: string;
+    entidadId: string;
+    tipoEntidad: string;
     tipoReaccion: string;
 }
-export declare const ReaccionSchema: import("mongoose").Schema<Reaccion, import("mongoose").Model<Reaccion, any, any, any, import("mongoose").Document<unknown, any, Reaccion> & Reaccion & {
+export declare const ReaccionSchema: MongooseSchema<Reaccion, import("mongoose").Model<Reaccion, any, any, any, import("mongoose").Document<unknown, any, Reaccion> & Reaccion & {
     _id: import("mongoose").Types.ObjectId;
 } & {
     __v: number;

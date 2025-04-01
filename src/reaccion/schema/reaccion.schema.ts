@@ -1,21 +1,15 @@
-import { Schema, SchemaFactory, Prop } from "@nestjs/mongoose"
+  import { Schema, SchemaFactory, Prop } from "@nestjs/mongoose";
+  import { Schema as MongooseSchema } from "mongoose";
 
-@Schema({
-    timestamps: true
-})
+  @Schema({ timestamps: true })
+  export class Reaccion {
+    @Prop({ required: true, type: MongooseSchema.Types.ObjectId, refPath: 'tipoEntidad' })
+    entidadId: string; 
 
-export class Reaccion{
-    @Prop({
-        required:true,
-    })
-    publicacionOComentarioId:string;
+    @Prop({ required: true, enum: ['publicacion', 'comentario'] })
+    tipoEntidad: string; 
+    @Prop({ required: true, enum: ['like', 'love', 'haha', 'angry'] })
+    tipoReaccion: string; 
+  }
 
-    @Prop({
-        required:true
-    })
-    tipoReaccion: string;
-
-}
-
-
-export const ReaccionSchema = SchemaFactory.createForClass(Reaccion)
+  export const ReaccionSchema = SchemaFactory.createForClass(Reaccion);

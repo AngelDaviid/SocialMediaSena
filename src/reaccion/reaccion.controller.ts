@@ -38,4 +38,9 @@ export class ReaccionController {
         if(!reaccion) throw new NotFoundException('Reaccion no encontrada')
         return reaccion;
     }
+
+    @Post()
+    agregarReaccion(@Body() body: { entidadId: string; tipoEntidad: 'publicacion' | 'comentario'; tipoReaccion: string }) {
+      return this.reaccionService.agregarReaccion(body.entidadId, body.tipoEntidad, body.tipoReaccion);
+    }
 }

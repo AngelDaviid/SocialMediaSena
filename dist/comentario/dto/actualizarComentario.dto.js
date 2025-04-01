@@ -9,30 +9,14 @@ var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.ActualizarUserDto = void 0;
+exports.ActualizarComentarioDto = void 0;
 const class_validator_1 = require("class-validator");
-class ActualizarUserDto {
+class ActualizarComentarioDto {
 }
-exports.ActualizarUserDto = ActualizarUserDto;
+exports.ActualizarComentarioDto = ActualizarComentarioDto;
 __decorate([
     (0, class_validator_1.IsString)(),
+    (0, class_validator_1.IsNotEmpty)(),
     __metadata("design:type", String)
-], ActualizarUserDto.prototype, "username", void 0);
-__decorate([
-    (0, class_validator_1.IsString)(),
-    __metadata("design:type", String)
-], ActualizarUserDto.prototype, "rol", void 0);
-__decorate([
-    (0, class_validator_1.IsString)(),
-    __metadata("design:type", String)
-], ActualizarUserDto.prototype, "nombre", void 0);
-__decorate([
-    (0, class_validator_1.IsEmail)(),
-    __metadata("design:type", String)
-], ActualizarUserDto.prototype, "correoElectronico", void 0);
-__decorate([
-    (0, class_validator_1.MinLength)(4),
-    (0, class_validator_1.MaxLength)(6),
-    __metadata("design:type", String)
-], ActualizarUserDto.prototype, "password", void 0);
-//# sourceMappingURL=ActualizarUser.dto.js.map
+], ActualizarComentarioDto.prototype, "contenido", void 0);
+//# sourceMappingURL=actualizarComentario.dto.js.map

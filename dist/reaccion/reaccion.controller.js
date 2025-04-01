@@ -45,6 +45,9 @@ let ReaccionController = class ReaccionController {
             throw new common_1.NotFoundException('Reaccion no encontrada');
         return reaccion;
     }
+    agregarReaccion(body) {
+        return this.reaccionService.agregarReaccion(body.entidadId, body.tipoEntidad, body.tipoReaccion);
+    }
 };
 exports.ReaccionController = ReaccionController;
 __decorate([
@@ -83,6 +86,13 @@ __decorate([
     __metadata("design:paramtypes", [String]),
     __metadata("design:returntype", Promise)
 ], ReaccionController.prototype, "eliminar", null);
+__decorate([
+    (0, common_1.Post)(),
+    __param(0, (0, common_1.Body)()),
+    __metadata("design:type", Function),
+    __metadata("design:paramtypes", [Object]),
+    __metadata("design:returntype", void 0)
+], ReaccionController.prototype, "agregarReaccion", null);
 exports.ReaccionController = ReaccionController = __decorate([
     (0, common_1.Controller)('reaccion'),
     __metadata("design:paramtypes", [reaccion_service_1.ReaccionService])

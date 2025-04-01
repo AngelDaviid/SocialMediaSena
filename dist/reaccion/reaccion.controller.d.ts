@@ -32,4 +32,13 @@ export declare class ReaccionController {
     } & {
         __v: number;
     }) | null>;
+    agregarReaccion(body: {
+        entidadId: string;
+        tipoEntidad: 'publicacion' | 'comentario';
+        tipoReaccion: string;
+    }): Promise<import("mongoose").Document<unknown, {}, import("./schema/reaccion.schema").Reaccion> & import("./schema/reaccion.schema").Reaccion & {
+        _id: import("mongoose").Types.ObjectId;
+    } & {
+        __v: number;
+    }>;
 }

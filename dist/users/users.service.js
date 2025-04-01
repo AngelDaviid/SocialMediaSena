@@ -40,8 +40,8 @@ let UsersService = class UsersService {
     async findOneById(id) {
         return await this.userModel.findById(id).exec();
     }
-    async findOne(nombre) {
-        return await this.userModel.findOne({ nombre }).exec();
+    async findOneUser(username) {
+        return await this.userModel.findOne({ username }).exec();
     }
     async Eliminar(id) {
         return await this.userModel.findByIdAndDelete(id).exec();

@@ -20,7 +20,7 @@ let AuthController = class AuthController {
         this.authService = authService;
     }
     async login(body) {
-        const user = await this.authService.validarUser(body.nombre, body.password);
+        const user = await this.authService.validarUser(body.username, body.password);
         if (!user) {
             throw new common_1.UnauthorizedException('Credenciales invalidas');
         }

@@ -15,13 +15,11 @@ class ComentarioDto {
 }
 exports.ComentarioDto = ComentarioDto;
 __decorate([
-    (0, class_validator_1.IsUUID)(),
     (0, class_validator_1.IsString)(),
     (0, class_validator_1.IsNotEmpty)(),
     __metadata("design:type", String)
 ], ComentarioDto.prototype, "id", void 0);
 __decorate([
-    (0, class_validator_1.IsUUID)(),
     (0, class_validator_1.IsString)(),
     (0, class_validator_1.IsNotEmpty)(),
     __metadata("design:type", String)
@@ -31,9 +29,4 @@ __decorate([
     (0, class_validator_1.IsNotEmpty)(),
     __metadata("design:type", String)
 ], ComentarioDto.prototype, "contenido", void 0);
-__decorate([
-    (0, class_validator_1.IsDate)(),
-    (0, class_validator_1.IsNotEmpty)(),
-    __metadata("design:type", Date)
-], ComentarioDto.prototype, "fechaCreacion", void 0);
 //# sourceMappingURL=comentario.dto.js.map

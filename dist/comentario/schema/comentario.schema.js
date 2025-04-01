@@ -9,26 +9,31 @@ var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.ReaccionSchema = exports.Reaccion = void 0;
+exports.ComentarioSchema = exports.Comentario = void 0;
 const mongoose_1 = require("@nestjs/mongoose");
-const mongoose_2 = require("mongoose");
-let Reaccion = class Reaccion {
+let Comentario = class Comentario {
 };
-exports.Reaccion = Reaccion;
+exports.Comentario = Comentario;
 __decorate([
-    (0, mongoose_1.Prop)({ required: true, type: mongoose_2.Schema.Types.ObjectId, refPath: 'tipoEntidad' }),
+    (0, mongoose_1.Prop)({
+        required: true
+    }),
     __metadata("design:type", String)
-], Reaccion.prototype, "entidadId", void 0);
+], Comentario.prototype, "id", void 0);
 __decorate([
-    (0, mongoose_1.Prop)({ required: true, enum: ['publicacion', 'comentario'] }),
+    (0, mongoose_1.Prop)({
+        required: true
+    }),
     __metadata("design:type", String)
-], Reaccion.prototype, "tipoEntidad", void 0);
+], Comentario.prototype, "publicacionId", void 0);
 __decorate([
-    (0, mongoose_1.Prop)({ required: true, enum: ['like', 'love', 'haha', 'angry'] }),
+    (0, mongoose_1.Prop)({
+        required: true
+    }),
     __metadata("design:type", String)
-], Reaccion.prototype, "tipoReaccion", void 0);
-exports.Reaccion = Reaccion = __decorate([
+], Comentario.prototype, "contenido", void 0);
+exports.Comentario = Comentario = __decorate([
     (0, mongoose_1.Schema)({ timestamps: true })
-], Reaccion);
-exports.ReaccionSchema = mongoose_1.SchemaFactory.createForClass(Reaccion);
-//# sourceMappingURL=reaccion.schema.js.map
+], Comentario);
+exports.ComentarioSchema = mongoose_1.SchemaFactory.createForClass(Comentario);
+//# sourceMappingURL=comentario.schema.js.map

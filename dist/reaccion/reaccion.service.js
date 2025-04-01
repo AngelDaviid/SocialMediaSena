@@ -36,6 +36,10 @@ let ReaccionService = class ReaccionService {
     async eliminar(id) {
         return await this.reaccionModel.findByIdAndDelete(id);
     }
+    async agregarReaccion(entidadId, tipoEntidad, tipoReaccion) {
+        const reaccion = new this.reaccionModel({ entidadId, tipoEntidad, tipoReaccion });
+        return reaccion.save();
+    }
 };
 exports.ReaccionService = ReaccionService;
 exports.ReaccionService = ReaccionService = __decorate([

@@ -9,6 +9,12 @@ export type UserDocument = User & Document;
 export class User{
     @Prop({
         required: true,
+        unique: true
+    })
+    username: string;
+
+    @Prop({
+        required: true,
         unique: true,
     })
     nombre:string;

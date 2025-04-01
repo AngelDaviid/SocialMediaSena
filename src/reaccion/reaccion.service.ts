@@ -29,4 +29,9 @@ export class ReaccionService {
         return await this.reaccionModel.findByIdAndDelete(id)
     }
 
+    async agregarReaccion(entidadId: string, tipoEntidad: 'publicacion' | 'comentario', tipoReaccion: string) {
+        const reaccion = new this.reaccionModel({ entidadId, tipoEntidad, tipoReaccion });
+        return reaccion.save();
+    }
+
 }

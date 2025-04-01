@@ -32,9 +32,10 @@ export class UsersService {
         return await this.userModel.findById(id).exec();
     }
 
-    async findOne(nombre: string){
-        return await this.userModel.findOne({nombre}).exec();
+    async findOneUser(username:string){
+        return await this.userModel.findOne({username}).exec();
     }
+
 
     async Eliminar(id:string){
         return await this.userModel.findByIdAndDelete(id).exec();

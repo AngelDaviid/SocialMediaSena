@@ -30,8 +30,8 @@ let UsersController = class UsersController {
             throw new common_1.NotFoundException('Usuario no encontrado');
         return user;
     }
-    findOne(nombre) {
-        const user = this.userService.findOne(nombre);
+    findOneUser(username) {
+        const user = this.userService.findOneUser(username);
         if (!user)
             throw new common_1.NotFoundException('Usuario no encontrado');
         return user;
@@ -68,12 +68,12 @@ __decorate([
     __metadata("design:returntype", void 0)
 ], UsersController.prototype, "findOneById", null);
 __decorate([
-    (0, common_1.Get)('nombre/:nombre'),
-    __param(0, (0, common_1.Param)('nombre')),
+    (0, common_1.Get)('username/:username'),
+    __param(0, (0, common_1.Param)('username')),
     __metadata("design:type", Function),
     __metadata("design:paramtypes", [String]),
     __metadata("design:returntype", void 0)
-], UsersController.prototype, "findOne", null);
+], UsersController.prototype, "findOneUser", null);
 __decorate([
     (0, common_1.Post)(),
     __param(0, (0, common_1.Body)()),

@@ -20,7 +20,7 @@ export declare class UsersService {
     } & {
         __v: number;
     }) | null>;
-    findOne(nombre: string): Promise<(import("mongoose").Document<unknown, {}, User> & User & {
+    findOneUser(username: string): Promise<(import("mongoose").Document<unknown, {}, User> & User & {
         _id: import("mongoose").Types.ObjectId;
     } & {
         __v: number;
