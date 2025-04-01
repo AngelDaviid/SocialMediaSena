@@ -35,7 +35,7 @@ __decorate([
 ], Evento.prototype, "categoria", void 0);
 __decorate([
     (0, mongoose_1.Prop)({
-        required: true
+        required: true,
     }),
     __metadata("design:type", String)
 ], Evento.prototype, "fechaHora", void 0);

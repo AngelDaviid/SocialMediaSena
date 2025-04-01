@@ -22,7 +22,7 @@ export class Evento{
     categoria: string;
 
     @Prop({
-        required: true
+        required: true,
     })
     fechaHora: string; 
 

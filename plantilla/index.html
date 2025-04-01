@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Ingresar al Chat</title>
+</head>
+<body>
+    <h2>Chat Privado</h2>
+    <input type="text" id="usuario" placeholder="Tu nombre">
+    <input type="text" id="sala" placeholder="ID de la sala">
+    <button onclick="joinChat()">Entrar</button>
+
+    <script>
+        function joinChat() {
+            const usuario = document.getElementById("usuario").value;
+            const sala = document.getElementById("sala").value;
+            if (usuario && sala) {
+                window.location.href = `/chat.html?usuario=${usuario}&sala=${sala}`;
+            } else {
+                alert("Ingresa tu nombre y un ID de sala");
+            }
+        }
+    </script>
+</body>
+</html>

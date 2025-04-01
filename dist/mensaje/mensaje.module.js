@@ -12,6 +12,7 @@ const mongoose_1 = require("@nestjs/mongoose");
 const mensaje_schema_1 = require("./schema/mensaje.schema");
 const mensaje_controller_1 = require("./mensaje.controller");
 const mensaje_service_1 = require("./mensaje.service");
+const chat_getaway_1 = require("./chat.getaway");
 let MensajeModule = class MensajeModule {
 };
 exports.MensajeModule = MensajeModule;
@@ -19,7 +20,7 @@ exports.MensajeModule = MensajeModule = __decorate([
     (0, common_1.Module)({
         imports: [mongoose_1.MongooseModule.forFeature([{ name: 'Mensaje', schema: mensaje_schema_1.MensajeSchema }])],
         controllers: [mensaje_controller_1.MensajeController],
-        providers: [mensaje_service_1.MensajeService],
+        providers: [mensaje_service_1.MensajeService, chat_getaway_1.ChatGateway]
     })
 ], MensajeModule);
 //# sourceMappingURL=mensaje.module.js.map
