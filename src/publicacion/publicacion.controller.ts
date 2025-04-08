@@ -19,15 +19,8 @@ export class PublicacionController {
 
     @Post() 
     async Crear(@Body() body: CrearPublicacionDto){
-        try{
-            return await this.publicacionService.crear(body);
-        }catch(error){
-            if(error.code === 11000){
-                return {error: 'Publicacion ya existe'};
-            }
-            return {error: 'Error en el servidor'};
+        return await this.publicacionService.crear(body);
         }
-    }
 
     @Put(':id')
     async actualiza(@Param('id') id: string, @Body() body: ActualizarPublicacionDto){

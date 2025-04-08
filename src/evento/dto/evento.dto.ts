@@ -1,4 +1,5 @@
 import { IsString, IsNotEmpty, IsEnum, IsNumber } from 'class-validator';
+import { UserDocument } from 'src/users/schema/user.schema';
 
 export enum CategoriaEvento {
   CHARLA = 'charla',
@@ -8,6 +9,9 @@ export enum CategoriaEvento {
 }
 
 export class CrearEventoDto {
+
+  @IsNotEmpty()
+  idUsuario: UserDocument;
 
   @IsString()
   @IsNotEmpty()
@@ -32,4 +36,6 @@ export class CrearEventoDto {
   @IsNumber()
   @IsNotEmpty()
   inscritos: number;
+
+
 }

@@ -1,14 +1,16 @@
+import mongoose from 'mongoose';
 export declare class Certificado {
-    eventoOCursoId: string;
+    IdUser: mongoose.Schema.Types.ObjectId;
+    eventoOCursoId: mongoose.Schema.Types.ObjectId;
     fechaEmision: string;
     enlaceDescarga: string;
 }
-export declare const CertificadoSchema: import("mongoose").Schema<Certificado, import("mongoose").Model<Certificado, any, any, any, import("mongoose").Document<unknown, any, Certificado> & Certificado & {
-    _id: import("mongoose").Types.ObjectId;
+export declare const CertificadoSchema: mongoose.Schema<Certificado, mongoose.Model<Certificado, any, any, any, mongoose.Document<unknown, any, Certificado> & Certificado & {
+    _id: mongoose.Types.ObjectId;
 } & {
     __v: number;
-}, any>, {}, {}, {}, {}, import("mongoose").DefaultSchemaOptions, Certificado, import("mongoose").Document<unknown, {}, import("mongoose").FlatRecord<Certificado>> & import("mongoose").FlatRecord<Certificado> & {
-    _id: import("mongoose").Types.ObjectId;
+}, any>, {}, {}, {}, {}, mongoose.DefaultSchemaOptions, Certificado, mongoose.Document<unknown, {}, mongoose.FlatRecord<Certificado>> & mongoose.FlatRecord<Certificado> & {
+    _id: mongoose.Types.ObjectId;
 } & {
     __v: number;
 }>;

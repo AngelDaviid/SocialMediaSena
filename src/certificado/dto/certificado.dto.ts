@@ -1,8 +1,14 @@
 import { IsNotEmpty, IsString } from 'class-validator';
+import { Evento } from 'src/evento/schema/evento.schema';
+import { UserDocument } from 'src/users/schema/user.schema';
 
 export class CrearCertificadoDto {
+
   @IsNotEmpty()
-  eventoOCursoId: string; //IEvento (modulo evento)
+  IdUser: UserDocument;
+
+  @IsNotEmpty()
+  eventoOCursoId: Evento; //IEvento (modulo evento)
 
   @IsString()
   @IsNotEmpty()

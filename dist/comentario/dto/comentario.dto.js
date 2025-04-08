@@ -11,18 +11,17 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.ComentarioDto = void 0;
 const class_validator_1 = require("class-validator");
+const publicacion_schema_1 = require("../../publicacion/schema/publicacion.schema");
 class ComentarioDto {
 }
 exports.ComentarioDto = ComentarioDto;
 __decorate([
-    (0, class_validator_1.IsString)(),
     (0, class_validator_1.IsNotEmpty)(),
-    __metadata("design:type", String)
+    __metadata("design:type", Object)
 ], ComentarioDto.prototype, "id", void 0);
 __decorate([
-    (0, class_validator_1.IsString)(),
     (0, class_validator_1.IsNotEmpty)(),
-    __metadata("design:type", String)
+    __metadata("design:type", publicacion_schema_1.Publicacion)
 ], ComentarioDto.prototype, "publicacionId", void 0);
 __decorate([
     (0, class_validator_1.IsString)(),

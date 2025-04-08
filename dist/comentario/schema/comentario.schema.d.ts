@@ -1,15 +1,15 @@
-import { Schema as MongooseSchema } from "mongoose";
+import mongoose from "mongoose";
 export declare class Comentario {
-    id: string;
-    publicacionId: string;
+    id: mongoose.Schema.Types.ObjectId;
+    publicacionId: mongoose.Schema.Types.ObjectId;
     contenido: string;
 }
-export declare const ComentarioSchema: MongooseSchema<Comentario, import("mongoose").Model<Comentario, any, any, any, import("mongoose").Document<unknown, any, Comentario> & Comentario & {
-    _id: import("mongoose").Types.ObjectId;
+export declare const ComentarioSchema: mongoose.Schema<Comentario, mongoose.Model<Comentario, any, any, any, mongoose.Document<unknown, any, Comentario> & Comentario & {
+    _id: mongoose.Types.ObjectId;
 } & {
     __v: number;
-}, any>, {}, {}, {}, {}, import("mongoose").DefaultSchemaOptions, Comentario, import("mongoose").Document<unknown, {}, import("mongoose").FlatRecord<Comentario>> & import("mongoose").FlatRecord<Comentario> & {
-    _id: import("mongoose").Types.ObjectId;
+}, any>, {}, {}, {}, {}, mongoose.DefaultSchemaOptions, Comentario, mongoose.Document<unknown, {}, mongoose.FlatRecord<Comentario>> & mongoose.FlatRecord<Comentario> & {
+    _id: mongoose.Types.ObjectId;
 } & {
     __v: number;
 }>;

@@ -16,6 +16,8 @@ var TipoNotificacion;
     TipoNotificacion["NUEVA_PUBLICACION"] = "nueva publicaci\u00F3n";
     TipoNotificacion["EMPLEO"] = "empleo";
     TipoNotificacion["MENSAJE"] = "mensaje";
+    TipoNotificacion["COMENTARIO"] = "comentario";
+    TipoNotificacion["REACCION"] = "reaccion";
     TipoNotificacion["OTROS"] = "otros";
 })(TipoNotificacion || (exports.TipoNotificacion = TipoNotificacion = {}));
 class CrearNotificacionDto {
@@ -23,8 +25,8 @@ class CrearNotificacionDto {
 exports.CrearNotificacionDto = CrearNotificacionDto;
 __decorate([
     (0, class_validator_1.IsNotEmpty)(),
-    __metadata("design:type", String)
-], CrearNotificacionDto.prototype, "id", void 0);
+    __metadata("design:type", Object)
+], CrearNotificacionDto.prototype, "iduser", void 0);
 __decorate([
     (0, class_validator_1.IsString)(),
     (0, class_validator_1.IsNotEmpty)(),

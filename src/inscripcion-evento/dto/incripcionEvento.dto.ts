@@ -1,4 +1,6 @@
 import { IsString, IsNotEmpty, IsEnum } from 'class-validator';
+import { Evento } from 'src/evento/schema/evento.schema';
+import { UserDocument } from 'src/users/schema/user.schema';
 
 export enum EstadoInscripcion {
   PENDIENTE = 'pendiente',
@@ -14,10 +16,12 @@ export enum TipoInscripcion {
 }
 
 export class InscripcionEventoDto {
-  
-  @IsString()
+
   @IsNotEmpty()
-  eventoId: string; //Tipo IEvente (modulo evento)
+  iduser:UserDocument;
+
+  @IsNotEmpty()
+  eventoId: Evento; //Tipo IEvente (modulo evento)
 
   @IsEnum(EstadoInscripcion)
   @IsNotEmpty()

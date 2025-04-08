@@ -32,8 +32,7 @@ __decorate([
     __metadata("design:type", String)
 ], GamificacionDto.prototype, "descripcion", void 0);
 __decorate([
-    (0, class_validator_1.IsString)(),
     (0, class_validator_1.IsNotEmpty)(),
-    __metadata("design:type", String)
+    __metadata("design:type", Object)
 ], GamificacionDto.prototype, "idUsuario", void 0);
 //# sourceMappingURL=gamificacion.dto.js.map

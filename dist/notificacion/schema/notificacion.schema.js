@@ -11,9 +11,53 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.NotificacionSchema = exports.Notificacion = void 0;
 const mongoose_1 = require("@nestjs/mongoose");
+const mongoose_2 = require("mongoose");
 let Notificacion = class Notificacion {
 };
 exports.Notificacion = Notificacion;
+__decorate([
+    (0, mongoose_1.Prop)({
+        type: mongoose_2.default.Schema.Types.ObjectId,
+        required: true,
+    }),
+    __metadata("design:type", mongoose_2.default.Schema.Types.ObjectId)
+], Notificacion.prototype, "iduser", void 0);
+__decorate([
+    (0, mongoose_1.Prop)({
+        type: mongoose_2.default.Schema.Types.ObjectId,
+    }),
+    __metadata("design:type", mongoose_2.default.Schema.Types.ObjectId)
+], Notificacion.prototype, "idreaccion", void 0);
+__decorate([
+    (0, mongoose_1.Prop)({
+        type: mongoose_2.default.Schema.Types.ObjectId,
+    }),
+    __metadata("design:type", mongoose_2.default.Schema.Types.ObjectId)
+], Notificacion.prototype, "idpublicacion", void 0);
+__decorate([
+    (0, mongoose_1.Prop)({
+        type: mongoose_2.default.Schema.Types.ObjectId,
+    }),
+    __metadata("design:type", mongoose_2.default.Schema.Types.ObjectId)
+], Notificacion.prototype, "Idmensaje", void 0);
+__decorate([
+    (0, mongoose_1.Prop)({
+        type: mongoose_2.default.Schema.Types.ObjectId,
+    }),
+    __metadata("design:type", mongoose_2.default.Schema.Types.ObjectId)
+], Notificacion.prototype, "idevento", void 0);
+__decorate([
+    (0, mongoose_1.Prop)({
+        type: mongoose_2.default.Schema.Types.ObjectId,
+    }),
+    __metadata("design:type", mongoose_2.default.Schema.Types.ObjectId)
+], Notificacion.prototype, "idcomentario", void 0);
+__decorate([
+    (0, mongoose_1.Prop)({
+        type: mongoose_2.default.Schema.Types.ObjectId,
+    }),
+    __metadata("design:type", mongoose_2.default.Schema.Types.ObjectId)
+], Notificacion.prototype, "idempleo", void 0);
 __decorate([
     (0, mongoose_1.Prop)({ required: true }),
     __metadata("design:type", String)

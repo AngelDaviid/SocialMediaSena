@@ -1,13 +1,14 @@
 import { IsString, IsNotEmpty,  } from 'class-validator';
+import { Publicacion } from 'src/publicacion/schema/publicacion.schema';
+import { UserDocument } from 'src/users/schema/user.schema';
 
 export class ComentarioDto {
-  @IsString()
-  @IsNotEmpty()
-  id: string;
 
-  @IsString()
   @IsNotEmpty()
-  publicacionId: string;
+  id: UserDocument;
+  
+  @IsNotEmpty()
+  publicacionId: Publicacion;
 
   @IsString()
   @IsNotEmpty()

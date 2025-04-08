@@ -11,6 +11,7 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.CrearPostulacionDto = exports.EstadoPostulacion = void 0;
 const class_validator_1 = require("class-validator");
+const empleo_schema_1 = require("../../empleo/schema/empleo.schema");
 var EstadoPostulacion;
 (function (EstadoPostulacion) {
     EstadoPostulacion["PENDIENTE"] = "pendiente";
@@ -21,9 +22,12 @@ class CrearPostulacionDto {
 }
 exports.CrearPostulacionDto = CrearPostulacionDto;
 __decorate([
-    (0, class_validator_1.IsString)(),
     (0, class_validator_1.IsNotEmpty)(),
-    __metadata("design:type", String)
+    __metadata("design:type", Object)
+], CrearPostulacionDto.prototype, "iduser", void 0);
+__decorate([
+    (0, class_validator_1.IsNotEmpty)(),
+    __metadata("design:type", empleo_schema_1.Empleo)
 ], CrearPostulacionDto.prototype, "ofertaEmpleoId", void 0);
 __decorate([
     (0, class_validator_1.IsString)(),

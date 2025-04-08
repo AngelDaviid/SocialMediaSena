@@ -1,20 +1,15 @@
 import { IsUUID, IsString, IsNotEmpty, IsDate } from 'class-validator';
+import { UserDocument } from 'src/users/schema/user.schema';
 
 export class CrearMensajeDto {
 
   @IsString()
   @IsNotEmpty()
-  idUser: string;
-
-
-  @IsString()
-  @IsNotEmpty()
-  remitenteId: string;
-
+  idUser: UserDocument;
 
   @IsString()
   @IsNotEmpty()
-  destinatarioId: string;
+  destinatarioId: UserDocument;
 
   @IsString()
   @IsNotEmpty()

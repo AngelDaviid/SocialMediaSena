@@ -11,6 +11,7 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.InscripcionEventoDto = exports.TipoInscripcion = exports.EstadoInscripcion = void 0;
 const class_validator_1 = require("class-validator");
+const evento_schema_1 = require("../../evento/schema/evento.schema");
 var EstadoInscripcion;
 (function (EstadoInscripcion) {
     EstadoInscripcion["PENDIENTE"] = "pendiente";
@@ -28,9 +29,12 @@ class InscripcionEventoDto {
 }
 exports.InscripcionEventoDto = InscripcionEventoDto;
 __decorate([
-    (0, class_validator_1.IsString)(),
     (0, class_validator_1.IsNotEmpty)(),
-    __metadata("design:type", String)
+    __metadata("design:type", Object)
+], InscripcionEventoDto.prototype, "iduser", void 0);
+__decorate([
+    (0, class_validator_1.IsNotEmpty)(),
+    __metadata("design:type", evento_schema_1.Evento)
 ], InscripcionEventoDto.prototype, "eventoId", void 0);
 __decorate([
     (0, class_validator_1.IsEnum)(EstadoInscripcion),

@@ -1,5 +1,6 @@
 
 import { IsNotEmpty, IsEnum, IsString } from 'class-validator';
+import { UserDocument } from 'src/users/schema/user.schema';
 
 export enum TipoLogro {
   PARTICIPACION = 'participación',
@@ -17,10 +18,9 @@ export class GamificacionDto {
   @IsString()
   @IsNotEmpty()
   descripcion: string;
-
-  @IsString()
+  
   @IsNotEmpty()
-  idUsuario: string;
+  idUsuario: UserDocument;
 
   /*@IsDate()
   @IsNotEmpty()

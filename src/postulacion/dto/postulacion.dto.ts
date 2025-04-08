@@ -1,4 +1,6 @@
-import { IsString, IsNotEmpty, IsDate, IsEnum } from 'class-validator';
+import { IsString, IsNotEmpty, IsEnum } from 'class-validator';
+import { Empleo } from 'src/empleo/schema/empleo.schema';
+import { UserDocument } from 'src/users/schema/user.schema';
 
 export enum EstadoPostulacion {
   PENDIENTE = 'pendiente',
@@ -7,9 +9,12 @@ export enum EstadoPostulacion {
 }
 
 export class CrearPostulacionDto{
-  @IsString()
+
   @IsNotEmpty()
-  ofertaEmpleoId: string; //Tipo IEmpleo (modulo empleo)
+  iduser: UserDocument;
+  
+  @IsNotEmpty()
+  ofertaEmpleoId: Empleo; //Tipo IEmpleo (modulo empleo)
 
   @IsString()
   @IsNotEmpty()

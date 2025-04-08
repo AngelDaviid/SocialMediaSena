@@ -1,17 +1,19 @@
 import { Schema, SchemaFactory, Prop } from "@nestjs/mongoose";
-import { Schema as MongooseSchema } from "mongoose";
+import mongoose, { Schema as MongooseSchema } from "mongoose";
 
 @Schema({ timestamps: true })
 export class Comentario {
   @Prop({
+    Type: mongoose.Schema.Types.ObjectId,
     required: true
   })
-  id:string;
+  id:mongoose.Schema.Types.ObjectId;
 
   @Prop({
+    Type: mongoose.Schema.Types.ObjectId,
     required: true
   })
-  publicacionId: string;
+  publicacionId: mongoose.Schema.Types.ObjectId;
 
   @Prop({
     required: true

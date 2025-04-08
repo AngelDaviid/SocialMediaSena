@@ -1,4 +1,5 @@
 import {  IsString, IsNotEmpty, IsEnum } from 'class-validator';
+import { UserDocument } from 'src/users/schema/user.schema';
 
 export enum EstadoEmpleo {
   ACTIVO = 'activo',
@@ -8,7 +9,7 @@ export enum EstadoEmpleo {
 export class CrearEmpleoDto {
   @IsString()
   @IsNotEmpty()
-  id: string;
+  iduser: UserDocument;
 
   @IsString()
   @IsNotEmpty()

@@ -21,11 +21,6 @@ class ReaccionDto {
 }
 exports.ReaccionDto = ReaccionDto;
 __decorate([
-    (0, class_validator_1.IsString)(),
-    (0, class_validator_1.IsNotEmpty)(),
-    __metadata("design:type", String)
-], ReaccionDto.prototype, "publicacionOComentarioId", void 0);
-__decorate([
     (0, class_validator_1.IsEnum)(TipoReaccion),
     (0, class_validator_1.IsNotEmpty)(),
     __metadata("design:type", String)

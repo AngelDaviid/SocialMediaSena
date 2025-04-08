@@ -1,14 +1,22 @@
 import { Schema, SchemaFactory, Prop } from '@nestjs/mongoose';
+import mongoose from 'mongoose';
 
 @Schema({
     timestamps:true
 })
 
 export class Certificado{
+
     @Prop({
+        Type: mongoose.Schema.Types.ObjectId,
         required:true
     })
-    eventoOCursoId: string; 
+    IdUser: mongoose.Schema.Types.ObjectId;
+    @Prop({
+        Type: mongoose.Schema.Types.ObjectId,
+        required:true
+    })
+    eventoOCursoId: mongoose.Schema.Types.ObjectId; 
 
     @Prop({
         required:true

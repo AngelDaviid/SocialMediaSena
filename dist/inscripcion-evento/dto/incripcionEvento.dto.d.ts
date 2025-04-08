@@ -1,3 +1,5 @@
+import { Evento } from 'src/evento/schema/evento.schema';
+import { UserDocument } from 'src/users/schema/user.schema';
 export declare enum EstadoInscripcion {
     PENDIENTE = "pendiente",
     CONFIRMADA = "confirmada",
@@ -10,7 +12,8 @@ export declare enum TipoInscripcion {
     TECNOLOGO = "Tecnologo"
 }
 export declare class InscripcionEventoDto {
-    eventoId: string;
+    iduser: UserDocument;
+    eventoId: Evento;
     estado: string;
     tipoinscripcion: string;
 }

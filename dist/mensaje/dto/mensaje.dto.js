@@ -17,17 +17,12 @@ exports.CrearMensajeDto = CrearMensajeDto;
 __decorate([
     (0, class_validator_1.IsString)(),
     (0, class_validator_1.IsNotEmpty)(),
-    __metadata("design:type", String)
+    __metadata("design:type", Object)
 ], CrearMensajeDto.prototype, "idUser", void 0);
 __decorate([
     (0, class_validator_1.IsString)(),
     (0, class_validator_1.IsNotEmpty)(),
-    __metadata("design:type", String)
-], CrearMensajeDto.prototype, "remitenteId", void 0);
-__decorate([
-    (0, class_validator_1.IsString)(),
-    (0, class_validator_1.IsNotEmpty)(),
-    __metadata("design:type", String)
+    __metadata("design:type", Object)
 ], CrearMensajeDto.prototype, "destinatarioId", void 0);
 __decorate([
     (0, class_validator_1.IsString)(),

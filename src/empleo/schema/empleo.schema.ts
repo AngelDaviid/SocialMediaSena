@@ -1,10 +1,18 @@
 import { Schema, SchemaFactory, Prop } from '@nestjs/mongoose'
+import mongoose from 'mongoose';
 
 @Schema({
     timestamps:true
 })
 
 export class Empleo{
+
+    @Prop({
+        type: mongoose.Schema.Types.ObjectId,
+        required: true,
+    })
+    iduser: mongoose.Schema.Types.ObjectId;
+    
     @Prop({
         required: true
     })

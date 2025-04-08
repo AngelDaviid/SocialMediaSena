@@ -11,12 +11,17 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.CrearCertificadoDto = void 0;
 const class_validator_1 = require("class-validator");
+const evento_schema_1 = require("../../evento/schema/evento.schema");
 class CrearCertificadoDto {
 }
 exports.CrearCertificadoDto = CrearCertificadoDto;
 __decorate([
     (0, class_validator_1.IsNotEmpty)(),
-    __metadata("design:type", String)
+    __metadata("design:type", Object)
+], CrearCertificadoDto.prototype, "IdUser", void 0);
+__decorate([
+    (0, class_validator_1.IsNotEmpty)(),
+    __metadata("design:type", evento_schema_1.Evento)
 ], CrearCertificadoDto.prototype, "eventoOCursoId", void 0);
 __decorate([
     (0, class_validator_1.IsString)(),

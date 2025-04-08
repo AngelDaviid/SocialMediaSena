@@ -1,4 +1,6 @@
+import mongoose from 'mongoose';
 export declare class Evento {
+    idUsuario: mongoose.Schema.Types.ObjectId;
     nombre: string;
     descripion: string;
     categoria: string;
@@ -6,12 +8,12 @@ export declare class Evento {
     lugar: string;
     inscritos: number;
 }
-export declare const EventoSchema: import("mongoose").Schema<Evento, import("mongoose").Model<Evento, any, any, any, import("mongoose").Document<unknown, any, Evento> & Evento & {
-    _id: import("mongoose").Types.ObjectId;
+export declare const EventoSchema: mongoose.Schema<Evento, mongoose.Model<Evento, any, any, any, mongoose.Document<unknown, any, Evento> & Evento & {
+    _id: mongoose.Types.ObjectId;
 } & {
     __v: number;
-}, any>, {}, {}, {}, {}, import("mongoose").DefaultSchemaOptions, Evento, import("mongoose").Document<unknown, {}, import("mongoose").FlatRecord<Evento>> & import("mongoose").FlatRecord<Evento> & {
-    _id: import("mongoose").Types.ObjectId;
+}, any>, {}, {}, {}, {}, mongoose.DefaultSchemaOptions, Evento, mongoose.Document<unknown, {}, mongoose.FlatRecord<Evento>> & mongoose.FlatRecord<Evento> & {
+    _id: mongoose.Types.ObjectId;
 } & {
     __v: number;
 }>;

@@ -22,9 +22,8 @@ class CrearPublicacionDto {
 }
 exports.CrearPublicacionDto = CrearPublicacionDto;
 __decorate([
-    (0, class_validator_1.IsString)(),
     (0, class_validator_1.IsNotEmpty)(),
-    __metadata("design:type", String)
+    __metadata("design:type", Object)
 ], CrearPublicacionDto.prototype, "id", void 0);
 __decorate([
     (0, class_validator_1.IsString)(),

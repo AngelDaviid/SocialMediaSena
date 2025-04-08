@@ -1,3 +1,4 @@
+import { UserDocument } from 'src/users/schema/user.schema';
 export declare enum CategoriaEvento {
     CHARLA = "charla",
     HACKATON = "hackaton",
@@ -5,6 +6,7 @@ export declare enum CategoriaEvento {
     OTROS = "otros"
 }
 export declare class CrearEventoDto {
+    idUsuario: UserDocument;
     nombre: string;
     descripcion: string;
     categoria: CategoriaEvento;

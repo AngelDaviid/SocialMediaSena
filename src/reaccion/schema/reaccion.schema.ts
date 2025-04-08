@@ -1,15 +1,25 @@
   import { Schema, SchemaFactory, Prop } from "@nestjs/mongoose";
-  import { Schema as MongooseSchema } from "mongoose";
+  import mongoose, { mongo, Schema as MongooseSchema } from "mongoose";
+import { MonoTypeOperatorFunction } from "rxjs";
 
   @Schema({ timestamps: true })
   export class Reaccion {
-    @Prop({ required: true, type: MongooseSchema.Types.ObjectId, refPath: 'tipoEntidad' })
-    entidadId: string; 
+    @Prop({ 
+      
+      type: mongoose.Types.ObjectId
+    })
+    publicacionId?: mongoose.Types.ObjectId;
 
-    @Prop({ required: true, enum: ['publicacion', 'comentario'] })
-    tipoEntidad: string; 
-    @Prop({ required: true, enum: ['like', 'love', 'haha', 'angry'] })
-    tipoReaccion: string; 
+    @Prop({ 
+      
+      type: mongoose.Types.ObjectId
+    })
+    ComentarioId?: mongoose.Types.ObjectId;
+
+    @Prop({ 
+      required: true
+    })
+    tipoReaccion: string;
   }
 
   export const ReaccionSchema = SchemaFactory.createForClass(Reaccion);

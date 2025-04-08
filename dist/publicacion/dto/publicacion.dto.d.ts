@@ -1,3 +1,4 @@
+import { UserDocument } from 'src/users/schema/user.schema';
 export declare enum CategoriaPublicacion {
     PREGUNTAS = "preguntas",
     RECURSOS = "recursos",
@@ -5,7 +6,7 @@ export declare enum CategoriaPublicacion {
     OTROS = "otros"
 }
 export declare class CrearPublicacionDto {
-    id: string;
+    id: UserDocument;
     contenido: string;
     categoria: CategoriaPublicacion;
     numeroReacciones: number;

@@ -11,6 +11,7 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.GamificacionSchema = exports.Gamificacion = void 0;
 const mongoose_1 = require("@nestjs/mongoose");
+const mongoose_2 = require("mongoose");
 let Gamificacion = class Gamificacion {
 };
 exports.Gamificacion = Gamificacion;
@@ -28,9 +29,10 @@ __decorate([
 ], Gamificacion.prototype, "descripcion", void 0);
 __decorate([
     (0, mongoose_1.Prop)({
+        Type: mongoose_2.default.Schema.Types.ObjectId,
         required: true
     }),
-    __metadata("design:type", String)
+    __metadata("design:type", mongoose_2.default.Schema.Types.ObjectId)
 ], Gamificacion.prototype, "idUsuario", void 0);
 exports.Gamificacion = Gamificacion = __decorate([
     (0, mongoose_1.Schema)({

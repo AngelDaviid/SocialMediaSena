@@ -16,15 +16,21 @@ let Reaccion = class Reaccion {
 };
 exports.Reaccion = Reaccion;
 __decorate([
-    (0, mongoose_1.Prop)({ required: true, type: mongoose_2.Schema.Types.ObjectId, refPath: 'tipoEntidad' }),
-    __metadata("design:type", String)
-], Reaccion.prototype, "entidadId", void 0);
+    (0, mongoose_1.Prop)({
+        type: mongoose_2.default.Types.ObjectId
+    }),
+    __metadata("design:type", mongoose_2.default.Types.ObjectId)
+], Reaccion.prototype, "publicacionId", void 0);
 __decorate([
-    (0, mongoose_1.Prop)({ required: true, enum: ['publicacion', 'comentario'] }),
-    __metadata("design:type", String)
-], Reaccion.prototype, "tipoEntidad", void 0);
+    (0, mongoose_1.Prop)({
+        type: mongoose_2.default.Types.ObjectId
+    }),
+    __metadata("design:type", mongoose_2.default.Types.ObjectId)
+], Reaccion.prototype, "ComentarioId", void 0);
 __decorate([
-    (0, mongoose_1.Prop)({ required: true, enum: ['like', 'love', 'haha', 'angry'] }),
+    (0, mongoose_1.Prop)({
+        required: true
+    }),
     __metadata("design:type", String)
 ], Reaccion.prototype, "tipoReaccion", void 0);
 exports.Reaccion = Reaccion = __decorate([

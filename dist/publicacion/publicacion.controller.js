@@ -28,15 +28,7 @@ let PublicacionController = class PublicacionController {
         return this.publicacionService.findOne(id);
     }
     async Crear(body) {
-        try {
-            return await this.publicacionService.crear(body);
-        }
-        catch (error) {
-            if (error.code === 11000) {
-                return { error: 'Publicacion ya existe' };
-            }
-            return { error: 'Error en el servidor' };
-        }
+        return await this.publicacionService.crear(body);
     }
     async actualiza(id, body) {
         const publicacion = await this.publicacionService.actualizar(id, body);

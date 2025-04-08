@@ -1,4 +1,5 @@
 import { Prop, Schema, SchemaFactory } from "@nestjs/mongoose";
+import mongoose from "mongoose";
 
 
 @Schema({
@@ -7,9 +8,16 @@ import { Prop, Schema, SchemaFactory } from "@nestjs/mongoose";
 export class InscripcionEvento{
 
     @Prop({
+        Type: mongoose.Schema.Types.ObjectId,
         required: true
     })
-    eventoId: string;
+    iduser: mongoose.Schema.Types.ObjectId;
+
+    @Prop({
+        Type: mongoose.Schema.Types.ObjectId,
+        required: true
+    })
+    eventoId: mongoose.Schema.Types.ObjectId;
 
     @Prop({
         required: true

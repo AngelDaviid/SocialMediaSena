@@ -1,4 +1,6 @@
+import mongoose from 'mongoose';
 export declare class Empleo {
+    iduser: mongoose.Schema.Types.ObjectId;
     empresa: string;
     cargo: string;
     descripcion: string;
@@ -6,12 +8,12 @@ export declare class Empleo {
     ubicacion: string;
     estado: string;
 }
-export declare const EmpleoSchema: import("mongoose").Schema<Empleo, import("mongoose").Model<Empleo, any, any, any, import("mongoose").Document<unknown, any, Empleo> & Empleo & {
-    _id: import("mongoose").Types.ObjectId;
+export declare const EmpleoSchema: mongoose.Schema<Empleo, mongoose.Model<Empleo, any, any, any, mongoose.Document<unknown, any, Empleo> & Empleo & {
+    _id: mongoose.Types.ObjectId;
 } & {
     __v: number;
-}, any>, {}, {}, {}, {}, import("mongoose").DefaultSchemaOptions, Empleo, import("mongoose").Document<unknown, {}, import("mongoose").FlatRecord<Empleo>> & import("mongoose").FlatRecord<Empleo> & {
-    _id: import("mongoose").Types.ObjectId;
+}, any>, {}, {}, {}, {}, mongoose.DefaultSchemaOptions, Empleo, mongoose.Document<unknown, {}, mongoose.FlatRecord<Empleo>> & mongoose.FlatRecord<Empleo> & {
+    _id: mongoose.Types.ObjectId;
 } & {
     __v: number;
 }>;

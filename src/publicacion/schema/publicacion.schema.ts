@@ -1,4 +1,5 @@
 import { Prop, Schema, SchemaFactory } from '@nestjs/mongoose';
+import mongoose from 'mongoose';
 
 @Schema({
     timestamps: true,
@@ -6,10 +7,10 @@ import { Prop, Schema, SchemaFactory } from '@nestjs/mongoose';
 
 export class Publicacion{
     @Prop({
-        unique: true,
-        required: true
+        Type: mongoose.Schema.Types.ObjectId,
+        required: true,
     })
-    id: string;
+    id: mongoose.Schema.Types.ObjectId;
 
     @Prop({
         required: true

@@ -1,5 +1,7 @@
+import { Publicacion } from 'src/publicacion/schema/publicacion.schema';
+import { UserDocument } from 'src/users/schema/user.schema';
 export declare class ComentarioDto {
-    id: string;
-    publicacionId: string;
+    id: UserDocument;
+    publicacionId: Publicacion;
     contenido: string;
 }

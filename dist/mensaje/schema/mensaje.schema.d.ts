@@ -1,15 +1,15 @@
+import mongoose from "mongoose";
 export declare class Mensaje {
-    idUser: string;
-    remitenteId: string;
-    destinatarioId: string;
+    idUser: mongoose.Schema.Types.ObjectId;
+    destinatarioId: mongoose.Schema.Types.ObjectId;
     contenido: string;
 }
-export declare const MensajeSchema: import("mongoose").Schema<Mensaje, import("mongoose").Model<Mensaje, any, any, any, import("mongoose").Document<unknown, any, Mensaje> & Mensaje & {
-    _id: import("mongoose").Types.ObjectId;
+export declare const MensajeSchema: mongoose.Schema<Mensaje, mongoose.Model<Mensaje, any, any, any, mongoose.Document<unknown, any, Mensaje> & Mensaje & {
+    _id: mongoose.Types.ObjectId;
 } & {
     __v: number;
-}, any>, {}, {}, {}, {}, import("mongoose").DefaultSchemaOptions, Mensaje, import("mongoose").Document<unknown, {}, import("mongoose").FlatRecord<Mensaje>> & import("mongoose").FlatRecord<Mensaje> & {
-    _id: import("mongoose").Types.ObjectId;
+}, any>, {}, {}, {}, {}, mongoose.DefaultSchemaOptions, Mensaje, mongoose.Document<unknown, {}, mongoose.FlatRecord<Mensaje>> & mongoose.FlatRecord<Mensaje> & {
+    _id: mongoose.Types.ObjectId;
 } & {
     __v: number;
 }>;

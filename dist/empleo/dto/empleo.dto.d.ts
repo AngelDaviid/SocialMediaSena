@@ -1,9 +1,10 @@
+import { UserDocument } from 'src/users/schema/user.schema';
 export declare enum EstadoEmpleo {
     ACTIVO = "activo",
     CERRADO = "cerrado"
 }
 export declare class CrearEmpleoDto {
-    id: string;
+    iduser: UserDocument;
     empresa: string;
     cargo: string;
     descripcion: string;
