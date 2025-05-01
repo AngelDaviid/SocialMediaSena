@@ -22,6 +22,11 @@ export class Mensaje{
         required: true
     })
     contenido: string;
+
+    @Prop({
+        required: false,
+    })
+    archivo: string;
 }
 
 export const MensajeSchema = SchemaFactory.createForClass(Mensaje)

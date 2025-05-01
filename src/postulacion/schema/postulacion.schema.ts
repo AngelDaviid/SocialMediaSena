@@ -20,7 +20,7 @@ export class Postulacion{
     ofertaEmpleoId: mongoose.Schema.Types.ObjectId;
 
     @Prop({
-        required: true
+        required: false
     })
     cvAdjunto: string;
 

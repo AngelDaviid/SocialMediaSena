@@ -5,7 +5,8 @@ import { PublicacionController } from './publicacion.controller';
 import { PublicacionService } from './publicacion.service';
 
 @Module({
-    imports: [MongooseModule.forFeature([{ name: 'Publicacion', schema: PublicacionSchema }])],
+    imports: [MongooseModule.forFeature([{ name: 'Publicacion', schema: PublicacionSchema }]),
+    ],
     controllers: [PublicacionController],
     providers: [PublicacionService],
     exports: []

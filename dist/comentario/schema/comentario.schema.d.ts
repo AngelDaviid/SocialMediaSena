@@ -3,6 +3,7 @@ export declare class Comentario {
     id: mongoose.Schema.Types.ObjectId;
     publicacionId: mongoose.Schema.Types.ObjectId;
     contenido: string;
+    archivo: string;
 }
 export declare const ComentarioSchema: mongoose.Schema<Comentario, mongoose.Model<Comentario, any, any, any, mongoose.Document<unknown, any, Comentario> & Comentario & {
     _id: mongoose.Types.ObjectId;

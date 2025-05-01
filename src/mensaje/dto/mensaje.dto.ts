@@ -1,4 +1,4 @@
-import { IsUUID, IsString, IsNotEmpty, IsDate } from 'class-validator';
+import { IsString, IsNotEmpty, IsOptional } from 'class-validator';
 import { UserDocument } from 'src/users/schema/user.schema';
 
 export class CrearMensajeDto {
@@ -14,6 +14,10 @@ export class CrearMensajeDto {
   @IsString()
   @IsNotEmpty()
   contenido: string;
+
+  @IsString()
+  @IsOptional()
+  archivo?: string;
 
   /*@IsDate()
   @IsNotEmpty()

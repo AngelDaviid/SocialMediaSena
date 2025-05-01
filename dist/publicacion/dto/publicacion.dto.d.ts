@@ -11,4 +11,5 @@ export declare class CrearPublicacionDto {
     categoria: CategoriaPublicacion;
     numeroReacciones: number;
     numeroComentarios: number;
+    archivo?: string;
 }

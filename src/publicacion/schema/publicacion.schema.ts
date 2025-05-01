@@ -31,6 +31,11 @@ export class Publicacion{
         required: true
     })
     numeroComentarios: number; //Tipo IComentario (Modulo de comentario)
-}
 
+    @Prop({
+        required: false
+    })
+    archivo: string;
+
+}
 export const PublicacionSchema = SchemaFactory.createForClass(Publicacion)

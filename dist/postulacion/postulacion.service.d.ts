@@ -15,11 +15,7 @@ export declare class PostulacionService {
     } & {
         __v: number;
     }) | null>;
-    crear(crearPostulacionDto: CrearPostulacionDto): Promise<import("mongoose").Document<unknown, {}, Postulacion> & Postulacion & {
-        _id: import("mongoose").Types.ObjectId;
-    } & {
-        __v: number;
-    }>;
+    crear(crearPostulacionDto: CrearPostulacionDto): Promise<Postulacion>;
     actualizar(id: string, actualizarPostulacion: ActualizarPostulacionDto): Promise<(import("mongoose").Document<unknown, {}, Postulacion> & Postulacion & {
         _id: import("mongoose").Types.ObjectId;
     } & {

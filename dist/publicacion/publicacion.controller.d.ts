@@ -14,11 +14,7 @@ export declare class PublicacionController {
     } & {
         __v: number;
     }) | null>;
-    Crear(body: CrearPublicacionDto): Promise<import("mongoose").Document<unknown, {}, import("./schema/publicacion.schema").Publicacion> & import("./schema/publicacion.schema").Publicacion & {
-        _id: import("mongoose").Types.ObjectId;
-    } & {
-        __v: number;
-    }>;
+    Crear(body: CrearPublicacionDto, file: Express.Multer.File): Promise<import("./schema/publicacion.schema").Publicacion>;
     actualiza(id: string, body: ActualizarPublicacionDto): Promise<void>;
     eliminar(id: string): Promise<void>;
 }

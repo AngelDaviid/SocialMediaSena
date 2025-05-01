@@ -14,11 +14,7 @@ export declare class MensajeController {
     } & {
         __v: number;
     }) | null>;
-    crear(body: CrearMensajeDto): Promise<import("mongoose").Document<unknown, {}, import("./schema/mensaje.schema").Mensaje> & import("./schema/mensaje.schema").Mensaje & {
-        _id: import("mongoose").Types.ObjectId;
-    } & {
-        __v: number;
-    }>;
+    crear(body: CrearMensajeDto, file: Express.Multer.File): Promise<import("./schema/mensaje.schema").Mensaje>;
     actualiza(id: string, body: ActualizarMensajeDto): Promise<void>;
     eliminar(id: string): Promise<void>;
 }

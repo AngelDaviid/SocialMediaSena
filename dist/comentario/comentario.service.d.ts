@@ -19,11 +19,7 @@ export declare class ComentarioService {
     } & {
         __v: number;
     }, {}, Comentario, "findOne", {}>;
-    crear(comentarioDto: ComentarioDto): Promise<import("mongoose").Document<unknown, {}, Comentario> & Comentario & {
-        _id: import("mongoose").Types.ObjectId;
-    } & {
-        __v: number;
-    }>;
+    crear(comentarioDto: ComentarioDto): Promise<Comentario>;
     eliminar(id: string): import("mongoose").Query<(import("mongoose").Document<unknown, {}, Comentario> & Comentario & {
         _id: import("mongoose").Types.ObjectId;
     } & {

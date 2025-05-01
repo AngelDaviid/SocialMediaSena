@@ -5,6 +5,7 @@ export declare class Publicacion {
     categoria: string;
     numeroReacciones: number;
     numeroComentarios: number;
+    archivo: string;
 }
 export declare const PublicacionSchema: mongoose.Schema<Publicacion, mongoose.Model<Publicacion, any, any, any, mongoose.Document<unknown, any, Publicacion> & Publicacion & {
     _id: mongoose.Types.ObjectId;

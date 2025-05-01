@@ -1,4 +1,4 @@
-import { IsString, IsNotEmpty, IsEnum } from 'class-validator';
+import { IsString, IsNotEmpty, IsEnum, IsOptional } from 'class-validator';
 import { Empleo } from 'src/empleo/schema/empleo.schema';
 import { UserDocument } from 'src/users/schema/user.schema';
 
@@ -17,7 +17,7 @@ export class CrearPostulacionDto{
   ofertaEmpleoId: Empleo; //Tipo IEmpleo (modulo empleo)
 
   @IsString()
-  @IsNotEmpty()
+  @IsOptional()
   cvAdjunto: string;
 
   @IsString()

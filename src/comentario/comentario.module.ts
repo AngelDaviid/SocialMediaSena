@@ -4,7 +4,8 @@ import { ComentarioService } from './comentario.service';
 import { MongooseModule } from '@nestjs/mongoose';
 import { ComentarioSchema } from './schema/comentario.schema'
 @Module({
-  imports: [MongooseModule.forFeature([{name: 'comentario', schema: ComentarioSchema}])],
+  imports: [MongooseModule.forFeature([{name: 'comentario', schema: ComentarioSchema}])
+  ],
   controllers: [ComentarioController],
   providers: [ComentarioService]
 })

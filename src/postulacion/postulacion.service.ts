@@ -17,7 +17,7 @@ export class PostulacionService {
         return this.postulacionModel.findById(id).exec();
     }
 
-    async crear(crearPostulacionDto: CrearPostulacionDto){
+    async crear(crearPostulacionDto: CrearPostulacionDto): Promise<Postulacion> {
         const nuevaPostulacion = new this.postulacionModel(crearPostulacionDto);
         return await nuevaPostulacion.save(); 
     }

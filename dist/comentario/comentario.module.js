@@ -17,7 +17,8 @@ let ComentarioModule = class ComentarioModule {
 exports.ComentarioModule = ComentarioModule;
 exports.ComentarioModule = ComentarioModule = __decorate([
     (0, common_1.Module)({
-        imports: [mongoose_1.MongooseModule.forFeature([{ name: 'comentario', schema: comentario_schema_1.ComentarioSchema }])],
+        imports: [mongoose_1.MongooseModule.forFeature([{ name: 'comentario', schema: comentario_schema_1.ComentarioSchema }])
+        ],
         controllers: [comentario_controller_1.ComentarioController],
         providers: [comentario_service_1.ComentarioService]
     })

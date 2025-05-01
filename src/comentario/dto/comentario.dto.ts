@@ -1,4 +1,4 @@
-import { IsString, IsNotEmpty,  } from 'class-validator';
+import { IsString, IsNotEmpty, IsOptional,  } from 'class-validator';
 import { Publicacion } from 'src/publicacion/schema/publicacion.schema';
 import { UserDocument } from 'src/users/schema/user.schema';
 
@@ -13,4 +13,9 @@ export class ComentarioDto {
   @IsString()
   @IsNotEmpty()
   contenido: string;
+
+  @IsString()
+  @IsOptional()
+  archivo?: string;
+
 }

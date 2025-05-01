@@ -14,11 +14,7 @@ export declare class PostulacionController {
     } & {
         __v: number;
     }) | null>;
-    crear(body: CrearPostulacionDto): Promise<import("mongoose").Document<unknown, {}, import("./schema/postulacion.schema").Postulacion> & import("./schema/postulacion.schema").Postulacion & {
-        _id: import("mongoose").Types.ObjectId;
-    } & {
-        __v: number;
-    }>;
+    crear(body: CrearPostulacionDto, file: Express.Multer.File): Promise<import("./schema/postulacion.schema").Postulacion>;
     actualizar(id: string, body: ActualizarPostulacionDto): Promise<import("mongoose").Document<unknown, {}, import("./schema/postulacion.schema").Postulacion> & import("./schema/postulacion.schema").Postulacion & {
         _id: import("mongoose").Types.ObjectId;
     } & {

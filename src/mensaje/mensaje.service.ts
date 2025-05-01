@@ -19,7 +19,8 @@ export class MensajeService{
         return await this.userModel.findById(id).exec();
     }
 
-    async crear(mensajeDto: CrearMensajeDto){
+    async crear(mensajeDto: CrearMensajeDto): Promise<Mensaje>{
+        // Convertir el archivo a base64 y asignarlo al campo correspondiente
         const mensaje = new this.userModel(mensajeDto);
         return await mensaje.save();
     }

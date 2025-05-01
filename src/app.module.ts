@@ -31,7 +31,8 @@ import { MensajeModule } from './mensaje/mensaje.module';
     NotificacionModule, 
     GamificacionModule, 
     MensajeModule,
-    AuthModule],
+    AuthModule,
+    ],
   controllers: [AppController],
   providers: [AppService, ChatGateway],
 })

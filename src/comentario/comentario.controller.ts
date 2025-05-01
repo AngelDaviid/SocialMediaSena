@@ -1,6 +1,8 @@
-import { Body, Controller, Delete, Get, HttpCode, Param, Post, Put } from '@nestjs/common';
+import { Body, Controller, Delete, Get, HttpCode, Param, Post, Put, UploadedFile, UseInterceptors } from '@nestjs/common';
 import { ComentarioService } from './comentario.service';
 import { ComentarioDto } from './dto/comentario.dto';
+import { FileInterceptor } from '@nestjs/platform-express';
+import * as multer from 'multer';
 
 @Controller('comentario')
 export class ComentarioController {
@@ -17,8 +19,23 @@ export class ComentarioController {
     }
 
     @Post()
-    async crear(@Body() comentarioDto: ComentarioDto) {
-        return this.comentarioService.crear(comentarioDto);
+    @UseInterceptors(FileInterceptor('file', {
+        storage: multer.memoryStorage(), //almacenamos el archivo en memoria
+    }))
+    async crear(@Body() comentarioDto: ComentarioDto, @UploadedFile() file: Express.Multer.File) {
+        console.log(file); //verifica si el archivo se subio correctamente
+        console.log(comentarioDto); //verifica si el body se subio correctamente
+        if (!file) {
+            throw new Error('El archivo no se encuentra');
+        }
+        const archivoBase64 = file.buffer.toString('base64')
+
+        const nuevoComentario= {
+            ...comentarioDto, 
+            archivo: archivoBase64, //lo transformamos a base64 para guardarlo en la base de datos
+        }
+
+        return  await this.comentarioService.crear(nuevoComentario);
     }
 
     @Put(':id')

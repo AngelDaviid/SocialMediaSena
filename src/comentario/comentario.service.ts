@@ -17,7 +17,7 @@ export class ComentarioService {
         return this.comentarioModel.findById(id)
     }
 
-    async crear(comentarioDto: ComentarioDto){
+    async crear(comentarioDto: ComentarioDto): Promise<Comentario>{
         const comentario  = new this.comentarioModel(comentarioDto)
         return await comentario.save()
     }

@@ -17,6 +17,8 @@ const common_1 = require("@nestjs/common");
 const postulacion_service_1 = require("./postulacion.service");
 const postulacion_dto_1 = require("./dto/postulacion.dto");
 const actualizarPostulacion_dto_1 = require("./dto/actualizarPostulacion.dto");
+const multer = require("multer");
+const platform_express_1 = require("@nestjs/platform-express");
 let PostulacionController = class PostulacionController {
     constructor(postulacionService) {
         this.postulacionService = postulacionService;
@@ -30,9 +32,18 @@ let PostulacionController = class PostulacionController {
             throw new common_1.NotFoundException('Postulacion no encontrada');
         return postulacion;
     }
-    async crear(body) {
-        const postulacion = await this.postulacionService.crear(body);
-        return postulacion;
+    async crear(body, file) {
+        console.log(file);
+        console.log(body);
+        if (!file) {
+            throw new Error('Archivo no encontrado');
+        }
+        const archivoBase64 = file.buffer.toString('base64');
+        const nuevaPostulacion = {
+            ...body,
+            cvAdjunto: archivoBase64,
+        };
+        return await this.postulacionService.crear(nuevaPostulacion);
     }
     async actualizar(id, body) {
         const postulacion = await this.postulacionService.actualizar(id, body);
@@ -63,9 +74,13 @@ __decorate([
 ], PostulacionController.prototype, "findOne", null);
 __decorate([
     (0, common_1.Post)(),
+    (0, common_1.UseInterceptors)((0, platform_express_1.FileInterceptor)('file', {
+        storage: multer.memoryStorage(),
+    })),
     __param(0, (0, common_1.Body)()),
+    __param(1, (0, common_1.UploadedFile)()),
     __metadata("design:type", Function),
-    __metadata("design:paramtypes", [postulacion_dto_1.CrearPostulacionDto]),
+    __metadata("design:paramtypes", [postulacion_dto_1.CrearPostulacionDto, Object]),
     __metadata("design:returntype", Promise)
 ], PostulacionController.prototype, "crear", null);
 __decorate([

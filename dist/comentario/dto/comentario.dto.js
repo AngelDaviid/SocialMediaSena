@@ -28,4 +28,9 @@ __decorate([
     (0, class_validator_1.IsNotEmpty)(),
     __metadata("design:type", String)
 ], ComentarioDto.prototype, "contenido", void 0);
+__decorate([
+    (0, class_validator_1.IsString)(),
+    (0, class_validator_1.IsOptional)(),
+    __metadata("design:type", String)
+], ComentarioDto.prototype, "archivo", void 0);
 //# sourceMappingURL=comentario.dto.js.map

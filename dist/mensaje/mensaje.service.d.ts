@@ -15,11 +15,7 @@ export declare class MensajeService {
     } & {
         __v: number;
     }) | null>;
-    crear(mensajeDto: CrearMensajeDto): Promise<import("mongoose").Document<unknown, {}, Mensaje> & Mensaje & {
-        _id: import("mongoose").Types.ObjectId;
-    } & {
-        __v: number;
-    }>;
+    crear(mensajeDto: CrearMensajeDto): Promise<Mensaje>;
     actualizar(id: string, mensajeDto: ActualizarMensajeDto): Promise<(import("mongoose").Document<unknown, {}, Mensaje> & Mensaje & {
         _id: import("mongoose").Types.ObjectId;
     } & {

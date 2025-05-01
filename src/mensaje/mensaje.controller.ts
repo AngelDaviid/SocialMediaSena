@@ -1,7 +1,9 @@
-import { Body, Controller, Delete, Get, NotFoundException, Param, Post, Put } from "@nestjs/common";
+import { Body, Controller, Delete, Get, NotFoundException, Param, Post, Put, UploadedFile, UseInterceptors } from "@nestjs/common";
 import { MensajeService } from "./mensaje.service";
 import { CrearMensajeDto} from "./dto/mensaje.dto";
 import { ActualizarMensajeDto } from "./dto/ActualizarMenaje.dto";
+import { FileInterceptor } from "@nestjs/platform-express";
+import* as multer from 'multer';
 
 
 
@@ -20,8 +22,24 @@ export class MensajeController{
     }
 
     @Post()
-    async crear(@Body() body: CrearMensajeDto){ 
-        return await this.mensajeService.crear(body);
+    @UseInterceptors(FileInterceptor('file',{
+        storage: multer.memoryStorage(), //almacenamos el archivo en memoria
+    }))
+    async crear(@Body() body: CrearMensajeDto, @UploadedFile() file: Express.Multer.File){
+        console.log(file)
+        console.log(body)
+        if(!file){
+            throw new Error('Archivo no encontrado')
+        }
+
+        const archivoBase64 = file.buffer.toString('base64');
+
+        const nuevoMensaje ={
+            ...body,
+            archivo: archivoBase64,
+        }
+
+        return await this.mensajeService.crear(nuevoMensaje);
     }
 
     @Put(':id')

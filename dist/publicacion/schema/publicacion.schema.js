@@ -46,6 +46,12 @@ __decorate([
     }),
     __metadata("design:type", Number)
 ], Publicacion.prototype, "numeroComentarios", void 0);
+__decorate([
+    (0, mongoose_1.Prop)({
+        required: false
+    }),
+    __metadata("design:type", String)
+], Publicacion.prototype, "archivo", void 0);
 exports.Publicacion = Publicacion = __decorate([
     (0, mongoose_1.Schema)({
         timestamps: true,

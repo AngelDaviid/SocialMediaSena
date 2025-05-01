@@ -17,11 +17,7 @@ export declare class ComentarioController {
     } & {
         __v: number;
     }, {}, import("./schema/comentario.schema").Comentario, "findOne", {}>;
-    crear(comentarioDto: ComentarioDto): Promise<import("mongoose").Document<unknown, {}, import("./schema/comentario.schema").Comentario> & import("./schema/comentario.schema").Comentario & {
-        _id: import("mongoose").Types.ObjectId;
-    } & {
-        __v: number;
-    }>;
+    crear(comentarioDto: ComentarioDto, file: Express.Multer.File): Promise<import("./schema/comentario.schema").Comentario>;
     actualizar(id: string, comentarioActualizar: ComentarioDto): Promise<(import("mongoose").Document<unknown, {}, import("./schema/comentario.schema").Comentario> & import("./schema/comentario.schema").Comentario & {
         _id: import("mongoose").Types.ObjectId;
     } & {

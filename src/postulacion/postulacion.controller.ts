@@ -1,7 +1,9 @@
-import { Controller, Get, Post, Put, Delete, Body, Param, HttpCode, NotFoundException } from '@nestjs/common';
+import { Controller, Get, Post, Put, Delete, Body, Param, HttpCode, NotFoundException, UseInterceptors, UploadedFile } from '@nestjs/common';
 import { PostulacionService } from './postulacion.service';
 import { CrearPostulacionDto } from './dto/postulacion.dto'
 import { ActualizarPostulacionDto } from './dto/actualizarPostulacion.dto';
+import * as multer from 'multer';
+import { FileInterceptor } from '@nestjs/platform-express';
 
 @Controller('postulacion')
 export class PostulacionController {
@@ -20,9 +22,25 @@ export class PostulacionController {
     }
 
     @Post()
-    async crear(@Body() body: CrearPostulacionDto){
-        const postulacion = await this.postulacionService.crear(body);
-        return postulacion;
+    @UseInterceptors(FileInterceptor('file', {
+        storage: multer.memoryStorage(),
+    }))
+    async crear(@Body() body: CrearPostulacionDto, @UploadedFile() file: Express.Multer.File){
+        console.log(file)
+        console.log(body)
+        if(!file){
+            throw new Error('Archivo no encontrado')
+        }
+
+        const archivoBase64 = file.buffer.toString('base64');
+
+        const nuevaPostulacion = { 
+            ...body,
+            cvAdjunto: archivoBase64, 
+        }
+
+
+        return await this.postulacionService.crear(nuevaPostulacion);
     }
 
     @Put(':id')

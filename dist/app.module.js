@@ -43,7 +43,8 @@ exports.AppModule = AppModule = __decorate([
             notificacion_module_1.NotificacionModule,
             gamificacion_module_1.GamificacionModule,
             mensaje_module_1.MensajeModule,
-            auth_module_1.AuthModule],
+            auth_module_1.AuthModule,
+        ],
         controllers: [app_controller_1.AppController],
         providers: [app_service_1.AppService, chat_getaway_1.ChatGateway],
     })

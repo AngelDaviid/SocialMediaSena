@@ -16,6 +16,8 @@ exports.ComentarioController = void 0;
 const common_1 = require("@nestjs/common");
 const comentario_service_1 = require("./comentario.service");
 const comentario_dto_1 = require("./dto/comentario.dto");
+const platform_express_1 = require("@nestjs/platform-express");
+const multer = require("multer");
 let ComentarioController = class ComentarioController {
     constructor(comentarioService) {
         this.comentarioService = comentarioService;
@@ -26,8 +28,18 @@ let ComentarioController = class ComentarioController {
     findOne(id) {
         return this.comentarioService.findOne(id);
     }
-    async crear(comentarioDto) {
-        return this.comentarioService.crear(comentarioDto);
+    async crear(comentarioDto, file) {
+        console.log(file);
+        console.log(comentarioDto);
+        if (!file) {
+            throw new Error('El archivo no se encuentra');
+        }
+        const archivoBase64 = file.buffer.toString('base64');
+        const nuevoComentario = {
+            ...comentarioDto,
+            archivo: archivoBase64,
+        };
+        return await this.comentarioService.crear(nuevoComentario);
     }
     async actualizar(id, comentarioActualizar) {
         return this.comentarioService.actualizar(id, comentarioActualizar);
@@ -52,9 +64,13 @@ __decorate([
 ], ComentarioController.prototype, "findOne", null);
 __decorate([
     (0, common_1.Post)(),
+    (0, common_1.UseInterceptors)((0, platform_express_1.FileInterceptor)('file', {
+        storage: multer.memoryStorage(),
+    })),
     __param(0, (0, common_1.Body)()),
+    __param(1, (0, common_1.UploadedFile)()),
     __metadata("design:type", Function),
-    __metadata("design:paramtypes", [comentario_dto_1.ComentarioDto]),
+    __metadata("design:paramtypes", [comentario_dto_1.ComentarioDto, Object]),
     __metadata("design:returntype", Promise)
 ], ComentarioController.prototype, "crear", null);
 __decorate([

@@ -17,7 +17,8 @@ let PublicacionModule = class PublicacionModule {
 exports.PublicacionModule = PublicacionModule;
 exports.PublicacionModule = PublicacionModule = __decorate([
     (0, common_1.Module)({
-        imports: [mongoose_1.MongooseModule.forFeature([{ name: 'Publicacion', schema: publicacion_schema_1.PublicacionSchema }])],
+        imports: [mongoose_1.MongooseModule.forFeature([{ name: 'Publicacion', schema: publicacion_schema_1.PublicacionSchema }]),
+        ],
         controllers: [publicacion_controller_1.PublicacionController],
         providers: [publicacion_service_1.PublicacionService],
         exports: []

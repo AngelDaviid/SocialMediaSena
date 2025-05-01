@@ -17,6 +17,8 @@ const common_1 = require("@nestjs/common");
 const publicacion_service_1 = require("./publicacion.service");
 const publicacion_dto_1 = require("./dto/publicacion.dto");
 const ActualizarPublicacion_dto_1 = require("./dto/ActualizarPublicacion.dto");
+const platform_express_1 = require("@nestjs/platform-express");
+const multer = require("multer");
 let PublicacionController = class PublicacionController {
     constructor(publicacionService) {
         this.publicacionService = publicacionService;
@@ -27,8 +29,18 @@ let PublicacionController = class PublicacionController {
     findOne(id) {
         return this.publicacionService.findOne(id);
     }
-    async Crear(body) {
-        return await this.publicacionService.crear(body);
+    async Crear(body, file) {
+        console.log(file);
+        console.log(body);
+        if (!file) {
+            throw new Error('El archivo no se encuenta');
+        }
+        const archivoBase64 = file.buffer.toString('base64');
+        const nuevaPublicacion = {
+            ...body,
+            archivo: archivoBase64,
+        };
+        return await this.publicacionService.crear(nuevaPublicacion);
     }
     async actualiza(id, body) {
         const publicacion = await this.publicacionService.actualizar(id, body);
@@ -57,9 +69,13 @@ __decorate([
 ], PublicacionController.prototype, "findOne", null);
 __decorate([
     (0, common_1.Post)(),
+    (0, common_1.UseInterceptors)((0, platform_express_1.FileInterceptor)('file', {
+        storage: multer.memoryStorage(),
+    })),
     __param(0, (0, common_1.Body)()),
+    __param(1, (0, common_1.UploadedFile)()),
     __metadata("design:type", Function),
-    __metadata("design:paramtypes", [publicacion_dto_1.CrearPublicacionDto]),
+    __metadata("design:paramtypes", [publicacion_dto_1.CrearPublicacionDto, Object]),
     __metadata("design:returntype", Promise)
 ], PublicacionController.prototype, "Crear", null);
 __decorate([

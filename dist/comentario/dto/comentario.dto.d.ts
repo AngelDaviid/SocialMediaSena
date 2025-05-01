@@ -4,4 +4,5 @@ export declare class ComentarioDto {
     id: UserDocument;
     publicacionId: Publicacion;
     contenido: string;
+    archivo?: string;
 }

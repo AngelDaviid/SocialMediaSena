@@ -15,11 +15,7 @@ export declare class PublicacionService {
     } & {
         __v: number;
     }) | null>;
-    crear(publicacionDto: CrearPublicacionDto): Promise<import("mongoose").Document<unknown, {}, Publicacion> & Publicacion & {
-        _id: import("mongoose").Types.ObjectId;
-    } & {
-        __v: number;
-    }>;
+    crear(publicacionDto: CrearPublicacionDto): Promise<Publicacion>;
     actualizar(id: string, publicacionDto: ActualizarPublicacionDto): Promise<(import("mongoose").Document<unknown, {}, Publicacion> & Publicacion & {
         _id: import("mongoose").Types.ObjectId;
     } & {

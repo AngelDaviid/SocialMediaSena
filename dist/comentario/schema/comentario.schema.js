@@ -35,6 +35,12 @@ __decorate([
     }),
     __metadata("design:type", String)
 ], Comentario.prototype, "contenido", void 0);
+__decorate([
+    (0, mongoose_1.Prop)({
+        required: false
+    }),
+    __metadata("design:type", String)
+], Comentario.prototype, "archivo", void 0);
 exports.Comentario = Comentario = __decorate([
     (0, mongoose_1.Schema)({ timestamps: true })
 ], Comentario);

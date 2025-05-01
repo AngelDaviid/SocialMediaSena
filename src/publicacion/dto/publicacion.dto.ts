@@ -1,4 +1,5 @@
-import { IsString, IsNotEmpty, IsEnum, IsNumber } from 'class-validator';
+import { IsString, IsNotEmpty, IsEnum, IsNumber, IsOptional } from 'class-validator';
+import { Type } from 'class-transformer';
 import { UserDocument } from 'src/users/schema/user.schema';
 
 export enum CategoriaPublicacion {
@@ -21,15 +22,17 @@ export class CrearPublicacionDto {
   @IsNotEmpty()
   categoria: CategoriaPublicacion;
 
-  /*@IsDate()
-  @IsNotEmpty()
-  fechaCreacion: Date;*/
-
   @IsNumber()
   @IsNotEmpty()
+  @Type(() => Number)
   numeroReacciones: number;
 
   @IsNumber()
   @IsNotEmpty()
+  @Type(() => Number)
   numeroComentarios: number;
+
+  @IsString()
+  @IsOptional()
+  archivo?: string;
 }

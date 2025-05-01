@@ -35,6 +35,12 @@ __decorate([
     }),
     __metadata("design:type", String)
 ], Mensaje.prototype, "contenido", void 0);
+__decorate([
+    (0, mongoose_1.Prop)({
+        required: false,
+    }),
+    __metadata("design:type", String)
+], Mensaje.prototype, "archivo", void 0);
 exports.Mensaje = Mensaje = __decorate([
     (0, mongoose_1.Schema)({
         timestamps: true,

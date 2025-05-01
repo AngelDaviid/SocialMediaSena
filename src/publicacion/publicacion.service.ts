@@ -17,7 +17,7 @@ export class PublicacionService {
         return await this.userModel.findById(id).exec();
     }
 
-    async crear(publicacionDto: CrearPublicacionDto){
+    async crear(publicacionDto: CrearPublicacionDto): Promise <Publicacion>{
         const publicacion = new this.userModel(publicacionDto);
         return await publicacion.save();
     }
@@ -29,8 +29,5 @@ export class PublicacionService {
     async eliminar(id: string){
         return await this.userModel.findByIdAndDelete(id);
     }
-
-
-
 
 }

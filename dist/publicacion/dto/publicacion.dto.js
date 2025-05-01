@@ -11,6 +11,7 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.CrearPublicacionDto = exports.CategoriaPublicacion = void 0;
 const class_validator_1 = require("class-validator");
+const class_transformer_1 = require("class-transformer");
 var CategoriaPublicacion;
 (function (CategoriaPublicacion) {
     CategoriaPublicacion["PREGUNTAS"] = "preguntas";
@@ -38,11 +39,18 @@ __decorate([
 __decorate([
     (0, class_validator_1.IsNumber)(),
     (0, class_validator_1.IsNotEmpty)(),
+    (0, class_transformer_1.Type)(() => Number),
     __metadata("design:type", Number)
 ], CrearPublicacionDto.prototype, "numeroReacciones", void 0);
 __decorate([
     (0, class_validator_1.IsNumber)(),
     (0, class_validator_1.IsNotEmpty)(),
+    (0, class_transformer_1.Type)(() => Number),
     __metadata("design:type", Number)
 ], CrearPublicacionDto.prototype, "numeroComentarios", void 0);
+__decorate([
+    (0, class_validator_1.IsString)(),
+    (0, class_validator_1.IsOptional)(),
+    __metadata("design:type", String)
+], CrearPublicacionDto.prototype, "archivo", void 0);
 //# sourceMappingURL=publicacion.dto.js.map

@@ -17,6 +17,8 @@ const common_1 = require("@nestjs/common");
 const mensaje_service_1 = require("./mensaje.service");
 const mensaje_dto_1 = require("./dto/mensaje.dto");
 const ActualizarMenaje_dto_1 = require("./dto/ActualizarMenaje.dto");
+const platform_express_1 = require("@nestjs/platform-express");
+const multer = require("multer");
 let MensajeController = class MensajeController {
     constructor(mensajeService) {
         this.mensajeService = mensajeService;
@@ -27,8 +29,18 @@ let MensajeController = class MensajeController {
     findOne(id) {
         return this.mensajeService.findOne(id);
     }
-    async crear(body) {
-        return await this.mensajeService.crear(body);
+    async crear(body, file) {
+        console.log(file);
+        console.log(body);
+        if (!file) {
+            throw new Error('Archivo no encontrado');
+        }
+        const archivoBase64 = file.buffer.toString('base64');
+        const nuevoMensaje = {
+            ...body,
+            archivo: archivoBase64,
+        };
+        return await this.mensajeService.crear(nuevoMensaje);
     }
     async actualiza(id, body) {
         const mensaje = await this.mensajeService.actualizar(id, body);
@@ -57,9 +69,13 @@ __decorate([
 ], MensajeController.prototype, "findOne", null);
 __decorate([
     (0, common_1.Post)(),
+    (0, common_1.UseInterceptors)((0, platform_express_1.FileInterceptor)('file', {
+        storage: multer.memoryStorage(),
+    })),
     __param(0, (0, common_1.Body)()),
+    __param(1, (0, common_1.UploadedFile)()),
     __metadata("design:type", Function),
-    __metadata("design:paramtypes", [mensaje_dto_1.CrearMensajeDto]),
+    __metadata("design:paramtypes", [mensaje_dto_1.CrearMensajeDto, Object]),
     __metadata("design:returntype", Promise)
 ], MensajeController.prototype, "crear", null);
 __decorate([

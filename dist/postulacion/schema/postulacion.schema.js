@@ -31,7 +31,7 @@ __decorate([
 ], Postulacion.prototype, "ofertaEmpleoId", void 0);
 __decorate([
     (0, mongoose_1.Prop)({
-        required: true
+        required: false
     }),
     __metadata("design:type", String)
 ], Postulacion.prototype, "cvAdjunto", void 0);
