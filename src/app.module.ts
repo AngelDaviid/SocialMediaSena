@@ -14,7 +14,6 @@ import { NotificacionModule } from './notificacion/notificacion.module';
 import { GamificacionModule } from './gamificacion/gamificacion.module';
 import { MongooseModule } from '@nestjs/mongoose';
 import { AuthModule } from './auth/auth.module';
-import { ChatGateway } from './mensaje/chat.getaway';
 import { MensajeModule } from './mensaje/mensaje.module';
 
 @Module({
@@ -34,7 +33,7 @@ import { MensajeModule } from './mensaje/mensaje.module';
     AuthModule,
     ],
   controllers: [AppController],
-  providers: [AppService, ChatGateway],
+  providers: [AppService],
 })
 export class AppModule {}
 
