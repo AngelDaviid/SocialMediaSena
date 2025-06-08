@@ -54,4 +54,11 @@ export class MensajeController{
         if(!id) throw new NotFoundException('Mensaje no encontrado');
     }
 
+    @Get('conversation/:conversationId')
+    async findOneByConversationId(@Param('conversationId') conversationId: string){
+        const mensajes = await this.mensajeService.findOneByConversationId(conversationId);
+        if(!mensajes || mensajes.length === 0) throw new NotFoundException('No se encontraron mensajes para esta conversación');
+        return mensajes;
+    }
+
 }

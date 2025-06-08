@@ -27,6 +27,21 @@ export class Mensaje{
         required: false,
     })
     archivo: string;
+
+    @Prop({
+        type: mongoose.Schema.Types.ObjectId,
+        ref: 'Conversation',
+        required: true
+    })
+    conversationId: mongoose.Schema.Types.ObjectId;
+
+    @Prop({
+        default: false
+    })
+    isRead: boolean;
+
+    @Prop({})
+    readAt: Date;
 }
 
 export const MensajeSchema = SchemaFactory.createForClass(Mensaje)

@@ -41,6 +41,24 @@ __decorate([
     }),
     __metadata("design:type", String)
 ], Mensaje.prototype, "archivo", void 0);
+__decorate([
+    (0, mongoose_1.Prop)({
+        type: mongoose_2.default.Schema.Types.ObjectId,
+        ref: 'Conversation',
+        required: true
+    }),
+    __metadata("design:type", mongoose_2.default.Schema.Types.ObjectId)
+], Mensaje.prototype, "conversationId", void 0);
+__decorate([
+    (0, mongoose_1.Prop)({
+        default: false
+    }),
+    __metadata("design:type", Boolean)
+], Mensaje.prototype, "isRead", void 0);
+__decorate([
+    (0, mongoose_1.Prop)({}),
+    __metadata("design:type", Date)
+], Mensaje.prototype, "readAt", void 0);
 exports.Mensaje = Mensaje = __decorate([
     (0, mongoose_1.Schema)({
         timestamps: true,

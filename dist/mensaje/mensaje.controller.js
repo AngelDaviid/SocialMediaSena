@@ -52,6 +52,12 @@ let MensajeController = class MensajeController {
         if (!id)
             throw new common_1.NotFoundException('Mensaje no encontrado');
     }
+    async findOneByConversationId(conversationId) {
+        const mensajes = await this.mensajeService.findOneByConversationId(conversationId);
+        if (!mensajes || mensajes.length === 0)
+            throw new common_1.NotFoundException('No se encontraron mensajes para esta conversación');
+        return mensajes;
+    }
 };
 exports.MensajeController = MensajeController;
 __decorate([
@@ -93,6 +99,13 @@ __decorate([
     __metadata("design:paramtypes", [String]),
     __metadata("design:returntype", Promise)
 ], MensajeController.prototype, "eliminar", null);
+__decorate([
+    (0, common_1.Get)('conversation/:conversationId'),
+    __param(0, (0, common_1.Param)('conversationId')),
+    __metadata("design:type", Function),
+    __metadata("design:paramtypes", [String]),
+    __metadata("design:returntype", Promise)
+], MensajeController.prototype, "findOneByConversationId", null);
 exports.MensajeController = MensajeController = __decorate([
     (0, common_1.Controller)('mensaje'),
     __metadata("design:paramtypes", [mensaje_service_1.MensajeService])

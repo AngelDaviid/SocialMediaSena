@@ -9,34 +9,29 @@ var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.CrearMensajeDto = void 0;
+exports.UpdateConversationDto = void 0;
 const class_validator_1 = require("class-validator");
-class CrearMensajeDto {
+class UpdateConversationDto {
 }
-exports.CrearMensajeDto = CrearMensajeDto;
+exports.UpdateConversationDto = UpdateConversationDto;
 __decorate([
-    (0, class_validator_1.IsString)(),
-    (0, class_validator_1.IsNotEmpty)(),
-    __metadata("design:type", Object)
-], CrearMensajeDto.prototype, "idUser", void 0);
-__decorate([
-    (0, class_validator_1.IsString)(),
-    (0, class_validator_1.IsNotEmpty)(),
-    __metadata("design:type", Object)
-], CrearMensajeDto.prototype, "destinatarioId", void 0);
-__decorate([
-    (0, class_validator_1.IsString)(),
-    (0, class_validator_1.IsNotEmpty)(),
-    __metadata("design:type", String)
-], CrearMensajeDto.prototype, "contenido", void 0);
-__decorate([
-    (0, class_validator_1.IsString)(),
     (0, class_validator_1.IsOptional)(),
-    __metadata("design:type", String)
-], CrearMensajeDto.prototype, "archivo", void 0);
-__decorate([
     (0, class_validator_1.IsString)(),
-    (0, class_validator_1.IsOptional)(),
     __metadata("design:type", String)
-], CrearMensajeDto.prototype, "conversationId", void 0);
-//# sourceMappingURL=mensaje.dto.js.map
+], UpdateConversationDto.prototype, "name", void 0);
+__decorate([
+    (0, class_validator_1.IsOptional)(),
+    (0, class_validator_1.IsBoolean)(),
+    __metadata("design:type", Boolean)
+], UpdateConversationDto.prototype, "isGroup", void 0);
+__decorate([
+    (0, class_validator_1.IsOptional)(),
+    (0, class_validator_1.IsString)(),
+    __metadata("design:type", String)
+], UpdateConversationDto.prototype, "image", void 0);
+__decorate([
+    (0, class_validator_1.IsOptional)(),
+    (0, class_validator_1.IsArray)(),
+    __metadata("design:type", Array)
+], UpdateConversationDto.prototype, "participants", void 0);
+//# sourceMappingURL=update-conversations.dto.js.map

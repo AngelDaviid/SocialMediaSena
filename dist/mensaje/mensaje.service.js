@@ -16,31 +16,56 @@ exports.MensajeService = void 0;
 const common_1 = require("@nestjs/common");
 const mongoose_1 = require("mongoose");
 const mongoose_2 = require("@nestjs/mongoose");
+const conversatios_schema_1 = require("../conversations/schema/conversatios.schema");
 let MensajeService = class MensajeService {
-    constructor(userModel) {
-        this.userModel = userModel;
+    constructor(mensajeModel, conversationModel) {
+        this.mensajeModel = mensajeModel;
+        this.conversationModel = conversationModel;
     }
     async findAll() {
-        return await this.userModel.find().exec();
+        return await this.mensajeModel.find().exec();
     }
     async findOne(id) {
-        return await this.userModel.findById(id).exec();
+        return await this.mensajeModel.findById(id).exec();
     }
-    async crear(mensajeDto) {
-        const mensaje = new this.userModel(mensajeDto);
-        return await mensaje.save();
+    async findOneByConversationId(conversationId) {
+        return this.mensajeModel.find({ conversationId }).sort({ createdAt: -1 }).exec();
+    }
+    async crear(MensajeDto) {
+        const nuevoMensaje = new this.mensajeModel(MensajeDto);
+        const mensajeGuardado = await nuevoMensaje.save();
+        await this.conversationModel.findByIdAndUpdate(MensajeDto.conversationId, {
+            lastMessage: mensajeGuardado._id,
+            lastUpdatedBy: MensajeDto.idUser,
+            updatedAt: new Date()
+        });
+        return mensajeGuardado;
     }
     async actualizar(id, mensajeDto) {
-        return await this.userModel.findByIdAndUpdate(id, mensajeDto, { new: true });
+        return await this.mensajeModel.findByIdAndUpdate(id, mensajeDto, { new: true });
     }
     async eliminar(id) {
-        return await this.userModel.findByIdAndDelete(id);
+        return await this.mensajeModel.findByIdAndDelete(id);
+    }
+    async marcarComoLeido(messageId, idUser) {
+        return this.mensajeModel.findByIdAndUpdate(messageId, {
+            isRead: true, readAt: new Date(),
+        });
+    }
+    async getMensajesPorConversacion(conversationId, limit = 20, skip = 0) {
+        return this.mensajeModel.find({ conversationId })
+            .sort({ createdAt: -1 })
+            .skip(skip)
+            .limit(limit)
+            .exec();
     }
 };
 exports.MensajeService = MensajeService;
 exports.MensajeService = MensajeService = __decorate([
     (0, common_1.Injectable)(),
     __param(0, (0, mongoose_2.InjectModel)('Mensaje')),
-    __metadata("design:paramtypes", [mongoose_1.Model])
+    __param(1, (0, mongoose_2.InjectModel)(conversatios_schema_1.Conversation.name)),
+    __metadata("design:paramtypes", [mongoose_1.Model,
+        mongoose_1.Model])
 ], MensajeService);
 //# sourceMappingURL=mensaje.service.js.map

@@ -1,4 +1,4 @@
-import { IsNotEmpty, IsString, IsEmail, IsEnum, IsArray } from 'class-validator';
+import { IsNotEmpty, IsString, IsEmail, IsEnum, IsArray, Matches } from 'class-validator';
 
 export enum RolUsuario {
   ESTUDIANTE = 'Estudiante',

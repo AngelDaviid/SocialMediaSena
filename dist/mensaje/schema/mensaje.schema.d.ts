@@ -4,6 +4,9 @@ export declare class Mensaje {
     destinatarioId: mongoose.Schema.Types.ObjectId;
     contenido: string;
     archivo: string;
+    conversationId: mongoose.Schema.Types.ObjectId;
+    isRead: boolean;
+    readAt: Date;
 }
 export declare const MensajeSchema: mongoose.Schema<Mensaje, mongoose.Model<Mensaje, any, any, any, mongoose.Document<unknown, any, Mensaje> & Mensaje & {
     _id: mongoose.Types.ObjectId;

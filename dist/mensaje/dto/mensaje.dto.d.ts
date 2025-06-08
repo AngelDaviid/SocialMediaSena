@@ -4,4 +4,5 @@ export declare class CrearMensajeDto {
     destinatarioId: UserDocument;
     contenido: string;
     archivo?: string;
+    conversationId: string;
 }

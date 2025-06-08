@@ -24,6 +24,7 @@ const gamificacion_module_1 = require("./gamificacion/gamificacion.module");
 const mongoose_1 = require("@nestjs/mongoose");
 const auth_module_1 = require("./auth/auth.module");
 const mensaje_module_1 = require("./mensaje/mensaje.module");
+const conversations_module_1 = require("./conversations/conversations.module");
 let AppModule = class AppModule {
 };
 exports.AppModule = AppModule;
@@ -43,6 +44,7 @@ exports.AppModule = AppModule = __decorate([
             gamificacion_module_1.GamificacionModule,
             mensaje_module_1.MensajeModule,
             auth_module_1.AuthModule,
+            conversations_module_1.ConversationsModule,
         ],
         controllers: [app_controller_1.AppController],
         providers: [app_service_1.AppService],

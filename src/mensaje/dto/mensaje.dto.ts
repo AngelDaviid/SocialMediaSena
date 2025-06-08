@@ -19,6 +19,10 @@ export class CrearMensajeDto {
   @IsOptional()
   archivo?: string;
 
+  @IsString()
+  @IsOptional()
+  conversationId: string;
+
   /*@IsDate()
   @IsNotEmpty()
   fechaEnvio: Date;*/
